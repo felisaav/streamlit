@@ -130,14 +130,22 @@ st.markdown('---')
 #st.video(video_bytes)
 
 st.markdown('---')
-
-side_bar=st.sidebar
-side_bar.write('this is on the left')
-side_bar.write('this is another')
-
-
-st.markdown('---')
 audio_file=open('media/audio.mp3','rb')
 audio_bytes=audio_file.read()
 st.audio(audio_bytes)
 
+st.markdown('---')
+
+side_bar=st.sidebar
+side_bar.write('this is on the left')
+side_bar.write('this is another')
+st.write('this is in the middle')
+
+st.markdown('---')
+c1,c2,c3=st.columns(3)
+with c1:
+  st.image('media/column1.jpg')
+with c2:
+  st.image('media/column2.jpg')
+with c3:
+  st.image('media/column3.jpg')
