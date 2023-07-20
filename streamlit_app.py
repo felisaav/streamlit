@@ -16,10 +16,10 @@ data=pd.DataFrame({
 st.write(data)
 
 st.markdown('''# Markdown
-For Heading Level -1 or Title use (#)
-For Heading Level -2 or Header use (##)
-For Heading Level -3 or Subheader use (###)
-For Heading Level -4 
+# For Heading Level -1 or Title use (#)
+## For Heading Level -2 or Header use (##)
+### For Heading Level -3 or Subheader use (###)
+#### For Heading Level -4 
 
 To create paragraphs, use a blank line to separate one or more lines of text.                        
 Emphasis
