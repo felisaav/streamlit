@@ -153,3 +153,9 @@ with c3:
 st.markdown('---')
 with st.expander('click here'):
   st.write('this is super secret')
+
+st.markdown('---')
+variable=st.empty()
+variable.write('this will dissapreas')
+time.sleep(3)
+variable.empty()
