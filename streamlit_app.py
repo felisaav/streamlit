@@ -163,3 +163,16 @@ variable.empty()
 st.markdown('---')
 felipe_button=st.button('MY BUTTON')
 st.write('BUTTON=',felipe_button)
+
+st.markdown('---')
+data=pd.read_csv('tips.csv')
+
+#here we define the python function
+def display_random(df):
+  sample=df.sample(3)
+  return sample
+
+new_button=st.button('Click to get data')
+if new_button:
+  call=display_random(data)
+  st.dataframe(call)
