@@ -120,3 +120,9 @@ st.balloons()
 st.markdown('---')
 st.header('this is super cool:hotdog:')
 
+st.markdown('---')
+st.image(./media/fotito.jpeg')
+
+video_file=open('./media/google_team.mp4','rb')
+video_bytes=video_file.read()
+st.video(video_bytes)
