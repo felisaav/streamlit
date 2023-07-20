@@ -125,9 +125,9 @@ st.image('media/fotito.jpeg')
 
 st.markdown('---')
 
-video_file=open('media/google_team.mp4','rb')
-video_bytes=video_file.read()
-st.video(video_bytes)
+#video_file=open('media/google_team.mp4','rb')
+#video_bytes=video_file.read()
+#st.video(video_bytes)
 
 st.markdown('---')
 audio_file=open('media/audio.mp3','rb')
