@@ -130,6 +130,13 @@ st.markdown('---')
 #st.video(video_bytes)
 
 st.markdown('---')
+
+side_bar=st.sidebar
+side_bar.write('this is on the left')
+side_bar.write('this is another')
+
+
+st.markdown('---')
 audio_file=open('media/audio.mp3','rb')
 audio_bytes=audio_file.read()
 st.audio(audio_bytes)
