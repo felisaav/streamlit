@@ -100,3 +100,7 @@ data=pd.read_csv('tips.csv')
 st.dataframe(data)
 
 st.table(data)
+
+
+json_data=data.head(3).to_dict()
+st.json(json_data)
