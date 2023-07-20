@@ -62,12 +62,14 @@ add dashes (-), asterisks (*), or plus signs (+) in front of line items.
 To create a link, enclose the link text in brackets and then follow it immediately with the URL in parentheses
 
 My favorite search engine is [Google](https://google.com).
+
 ---
 #### URLs and Email Address
 
 To quickly turn a URL or email address into a link, enclose it in angle brackets.
 <https://www.ie.edu/school-science-technology/programs/master-business-analytics-big-data/>
 <concepciond@faculty.ie.edu>
+
 ---
 #### Images
 
@@ -87,3 +89,8 @@ body='''
   st.write(123456)
   '''
 st.code(body,language='python')
+
+formula='''
+  (x^2+y^2=z^2)
+  '''
+st.latex(formula)
