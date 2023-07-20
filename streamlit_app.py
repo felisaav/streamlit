@@ -104,3 +104,14 @@ st.table(data)
 
 json_data=data.head(3).to_dict()
 st.json(json_data)
+
+st.markdown('---')
+
+st.info('this is an info message')
+st.error('ups this is an error')
+st.warning('take care')
+st.success('yeeeah you get it')
+
+import time
+time.sleep(5)
+st.balloons()
