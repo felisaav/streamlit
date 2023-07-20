@@ -41,6 +41,7 @@ To create a blockquote, add a > in front of a paragraph.
 #### List
 
 Order List (items with number)
+
 1.First item
 2.Second item
 3.Third item
@@ -71,3 +72,18 @@ To quickly turn a URL or email address into a link, enclose it in angle brackets
 #### Images
 
 To add an image, add an exclamation mark (!), followed by alt text in brackets, and the path or URL to the image asset in parentheses. You can optionally add a title in quotation marks after the path or URL. ![Mountains are beautiful](https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)''')
+
+st.markdown('---')
+
+st.title('title')
+
+st.header('header')
+
+st.subheader('header')
+
+body='''
+  import streamlit as st
+  st.write('I love streamlit')
+  st.write(123456)
+  '''
+st.code(body,language='python')
