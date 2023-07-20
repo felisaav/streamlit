@@ -121,8 +121,16 @@ st.markdown('---')
 st.header('this is super cool:hotdog:')
 
 st.markdown('---')
-st.image(media/fotito.jpeg')
+st.image('media/fotito.jpeg')
+
+st.markdown('---')
 
 video_file=open('media/google_team.mp4','rb')
 video_bytes=video_file.read()
 st.video(video_bytes)
+
+st.markdown('---')
+audio_file=open('media/audio.mp3','rb')
+audio_bytes=audio_file.read()
+st.audio(audio_bytes)
+
