@@ -15,4 +15,4 @@ data=pd.DataFrame({
 
 st.write(data)
 
-
+st.markdown('strange class')
