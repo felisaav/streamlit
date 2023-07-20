@@ -159,3 +159,7 @@ variable=st.empty()
 variable.write('this will dissapreas')
 time.sleep(3)
 variable.empty()
+
+st.markdown('---')
+felipe_button=st.button('MY BUTTON')
+st.write('BUTTON=',felipe_button)
