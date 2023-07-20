@@ -149,3 +149,7 @@ with c2:
   st.image('media/column2.jpg')
 with c3:
   st.image('media/column3.jpg')
+
+st.markdown('---')
+with st.expander('click here'):
+  st.write('this is super secret')
