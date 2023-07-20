@@ -21,13 +21,19 @@ st.markdown('''# Markdown
 ### For Heading Level -3 or Subheader use (###)
 #### For Heading Level -4 
 ---
-To create paragraphs, use a blank line to separate one or more lines of text.                        
+To create paragraphs, use a blank line to separate one or more lines of text. 
+
 Emphasis
-making text bold, italic, bold italic
-To **bold text**, add two asterisks or underscores before and after a word or phrase
-To *italicize text*, add one asterisk or underscore before and after a word or phrase. 
+
+#### Making text bold, italic, bold italic
+
+To **bold text**, add two asterisks or underscores before and after a word or phrase.
+
+To *italicize text*, add one asterisk or underscore before and after a word or phrase.
+
 Add three asterisks or underscores before and after a word or ***phrase for bold italic***
-Blockquotes
+
+#### Blockquotes
 To create a blockquote, add a > in front of a paragraph.
 Dorothy followed her through many of the beautiful rooms in her castle.
 The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
