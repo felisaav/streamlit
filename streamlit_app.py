@@ -94,3 +94,9 @@ formula='''
   (x^2+y^2=z^2)
   '''
 st.latex(formula)
+
+
+data=pd.read_csv('tips.csv')
+st.dataframe(data)
+
+st.table(data)
