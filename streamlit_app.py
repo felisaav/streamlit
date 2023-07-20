@@ -26,7 +26,6 @@ To create paragraphs, use a blank line to separate one or more lines of text.
 Emphasis
 
 #### Making text bold, italic, bold italic
-
 To **bold text**, add two asterisks or underscores before and after a word or phrase.
 
 To *italicize text*, add one asterisk or underscore before and after a word or phrase.
