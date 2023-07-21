@@ -200,4 +200,4 @@ with st.container():
       'Mojitos':mojitos,
       'Beach':beach
     }
-    st.json(my_holydays)
+    st.json(my_holidays)
