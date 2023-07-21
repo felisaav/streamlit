@@ -221,4 +221,26 @@ options = st.multiselect(
     ['Yellow', 'Red'])
 
 st.write('You selected:', options)
-                 
+
+st.markdown('---')
+#slider
+ml_score = st.slider('your exam:',0,10,1)
+st.write('your score:',ml_score)
+
+st.markdown('---')
+#form
+with st.container():
+  name=st.text_input('name')
+  age=st.number_input('age')
+  about_you=st.text_area('label='talk about you')
+  birth=st.date_input('bday:')
+
+  your_info=st.button('submit')
+  if your_info:
+    info={
+      'your_name':name,
+      'your_age':age,
+      'about_you':about_you,
+      'bday':birth
+      }
+      st.json(info)
