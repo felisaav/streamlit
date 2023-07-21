@@ -176,3 +176,8 @@ new_button=st.button('Click to get data')
 if new_button:
   call=display_random(data)
   st.dataframe(call)
+
+st.markdown('---')
+st.subheader('let's use a checkbox')
+yes=st.checkbox('I agreed the terms and conditions')
+st.write('your selection is:' + yes)
