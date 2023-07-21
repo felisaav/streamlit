@@ -244,3 +244,12 @@ with st.container():
       'bday':birth
       }
     st.json(info)
+
+
+
+st.markdown('---')
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sex_dist=df['sex'].value_count()
+st.dataframe
