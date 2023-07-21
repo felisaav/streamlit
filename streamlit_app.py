@@ -213,4 +213,12 @@ st.markdown('---')
 the_best=st.selectbox('My favourite team is',('Real','Colo colo','manchester'))
 st.write('your selection is: ',the_best)
 
+st.markdown('---')
+#multi select box
+options = st.multiselect(
+    'What are your favorite colors',
+    ['Green', 'Yellow', 'Red', 'Blue'],
+    ['Yellow', 'Red'])
+
+st.write('You selected:', options)
                  
