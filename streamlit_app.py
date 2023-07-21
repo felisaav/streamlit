@@ -189,7 +189,7 @@ with st.container():
   sleep=st.checkbox('Sleep')
   cinema=st.checkbox('Cinema')
   mojitos=st.checkbox('Mojitos')
-  beach==st.checkbox('Beach')
+  beach=st.checkbox('Beach')
 
   holidays=st.button('PLAN FOR HOLIDAYS')
 
