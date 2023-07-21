@@ -180,4 +180,4 @@ if new_button:
 st.markdown('---')
 st.subheader("let's use a checkbox")
 yes=st.checkbox('I agreed the terms and conditions')
-st.write('your selection is:' + yes)
+st.write('your selection is:' , yes)
