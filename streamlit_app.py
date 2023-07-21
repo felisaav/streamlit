@@ -211,6 +211,6 @@ st.write('your selection is: ',my_team)
 st.markdown('---')
 #select box
 the_best=st.selectbox('My favourite team is',('Real','Colo colo','manchester'))
-st.write('your selection is: ',my_team)
+st.write('your selection is: ',the_best)
 
                  
