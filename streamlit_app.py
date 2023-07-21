@@ -232,7 +232,7 @@ st.markdown('---')
 with st.container():
   name=st.text_input('name')
   age=st.number_input('age')
-  about_you=st.text_area('label='talk about you')
+  about_you=st.text_area('label=talk about you')
   birth=st.date_input('bday:')
 
   your_info=st.button('submit')
