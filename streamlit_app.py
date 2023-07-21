@@ -184,7 +184,7 @@ st.write('your selection is:' , yes)
 
 st.markdown('---')
 
-with container():
+with st.container():
   st.success('What you will do on holidays')
   sleep=st.checkbox('Sleep')
   cinema=st.checkbox('Cinema')
