@@ -201,3 +201,16 @@ with st.container():
       'Beach':beach
     }
     st.json(my_holidays)
+
+
+st.markdown('---')
+#radio bottom
+my_team=st.radio('My favourite team is',('Real','Colo colo','manchester'))
+st.write('your selection is: ',my_team)
+
+st.markdown('---')
+#select box
+the_best=st.selectbox('My favourite team is',('Real','Colo colo','manchester'))
+st.write('your selection is: ',my_team)
+
+                 
