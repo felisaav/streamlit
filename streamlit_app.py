@@ -181,3 +181,23 @@ st.markdown('---')
 st.subheader("let's use a checkbox")
 yes=st.checkbox('I agreed the terms and conditions')
 st.write('your selection is:' , yes)
+
+st.markdown('---')
+
+with container():
+  st.success('What you will do on holidays')
+  sleep=st.checkbox('Sleep')
+  cinema=st.checkbox('Cinema')
+  mojitos=st.checkbox('Mojitos')
+  beach==st.checkbox('Beach')
+
+  holidays=st.button('PLAN FOR HOLIDAYS')
+
+  if holidays:
+    my_holidays ={
+      'Sleep':sleep,
+      'Cinema':cinema,
+      'Mojitos':mojitos,
+      'Beach':beach
+    }
+    st.json(my_holydays)
