@@ -243,4 +243,4 @@ with st.container():
       'about_you':about_you,
       'bday':birth
       }
-      st.json(info)
+    st.json(info)
