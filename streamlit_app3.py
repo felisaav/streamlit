@@ -82,5 +82,5 @@ with st.container():
 
 st.markdown('---')
 
-with st.container():
-  st.subheader('Select with plot we want 
+#with st.container():
+#  st.subheader('Select with plot we want 
