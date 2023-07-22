@@ -1,5 +1,5 @@
-$ pipreqs /home/project/location
-Successfully saved requirements file in /home/felisaav/streamlit/requirements.txt
+#$ pipreqs /home/project/location
+#Successfully saved requirements file in /home/felisaav/streamlit/requirements.txt
 
 import streamlit as st
 import pandas as pd
