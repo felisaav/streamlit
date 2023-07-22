@@ -1,11 +1,8 @@
-#$ pipreqs /home/project/location
-#Successfully saved requirements file in /home/felisaav/streamlit/requirements.txt
-
 import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-#import seaborn as sns
+import seaborn as sns
 
 
 df=pd.read_csv('tips.csv')
@@ -64,6 +61,7 @@ with st.container():
   values=df[feature].value_counts()
   c1,c2=st.columns(2)
 
+  '''
   with c1:
     fig,ax=plt.subplots()
     ax.pie(values,autopct='%0.2f%%',labels=values.index)
@@ -73,3 +71,4 @@ with st.container():
     fig,ax=plt.subplots()
     ax.bar(values.index,values)
     st.pyplot(fig)
+  '''
