@@ -56,6 +56,9 @@ st.write(cat_cols)
 cat_cols=data_types[data_types=='objects'].index
 st.write(cat_cols)
 
+cat_cols=tuple(data_types[data_types=='objects'].index)
+st.write(cat_cols)
+
 with st.container():
   feature=st.selection('Select the feature to display',cat_cols)
   values=df[feature].value_counts()
