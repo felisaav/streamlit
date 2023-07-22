@@ -50,11 +50,11 @@ st.write(data_types)
 #cat_cols=data_types[data_types=='objects']
 #st.write(cat_cols)
 
-#cat_cols=data_types[data_types=='objects'].index
-#st.write(cat_cols)
-
-cat_cols=tuple(data_types[data_types=='objects'].index)
+cat_cols=data_types[data_types=='objects'].index
 st.write(cat_cols)
+
+#cat_cols=tuple(data_types[data_types=='objects'].index)
+#st.write(cat_cols)
 
 with st.container():
   feature=st.selectbox('Select the feature to display',
