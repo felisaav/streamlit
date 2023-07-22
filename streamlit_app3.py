@@ -57,18 +57,22 @@ cat_cols=tuple(data_types[data_types=='objects'].index)
 st.write(cat_cols)
 
 with st.container():
-  feature=st.selectbox('Select the feature to display',cat_cols)
+  feature=st.selectbox('Select the feature to display',
+                       cat_cols)
   values=df[feature].value_counts()
   c1,c2=st.columns(2)
 
   with c1:
     fig,ax=plt.subplots()
-    ax.pie(values,autopct='%0.2f%%',labels=values.index)
+    ax.pie(values,
+           autopct='%0.2f%%',
+           labels=values.index)
     st.pyplot(fig)
 
   with c2:
     fig,ax=plt.subplots()
-    ax.bar(values.index,values)
+    ax.bar(values.index,
+           values)
     st.pyplot(fig)
 
 
