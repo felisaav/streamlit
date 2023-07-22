@@ -6,6 +6,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 df=pd.read_csv('tips.csv')
-st.DataFrame(df.head(5))
+st.dataframe(df.head(6))
 
 st.markdown('---')
