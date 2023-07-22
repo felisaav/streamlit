@@ -2,7 +2,7 @@ numpy
 pandas
 matplotlib
 seaborn
-pltoly
+plotly
 altair
 bokeh
 pillow
