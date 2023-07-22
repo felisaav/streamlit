@@ -58,8 +58,8 @@ cat_cols=tuple(data_types[data_types=='objects'].index)
 
 with st.container():
   feature=st.selectbox('Select the feature to display',cat_cols)
-  values=df[feature].value_counts()
-  c1,c2=st.columns(2)
+#  values=df[feature].value_counts()
+#  c1,c2=st.columns(2)
 
 #  with c1:
 #    fig,ax=plt.subplots()
