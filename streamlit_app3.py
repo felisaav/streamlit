@@ -70,3 +70,17 @@ with st.container():
 #    fig,ax=plt.subplots()
 #    ax.bar(values.index,values)
 #    st.pyplot(fig)
+
+
+st.markdown('---')
+st.header('Seaborn')
+
+with st.container():
+  fig,ax=plt.subplots()
+  sns.boxplot(x='sex',y='total_bill',data=df,ax=ax)
+  st.pyplot(fig)
+
+st.markdown('---')
+
+with st.container():
+  st.subheader('Select with plot we want 
