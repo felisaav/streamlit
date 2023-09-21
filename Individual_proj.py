@@ -58,7 +58,7 @@ def transform(df):
 	
 	return df
 
-transform(data)
+data=transform(data)
 
 #create train/test split
 X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'],data['spam'],test_size= 0.2,random_state=0)
