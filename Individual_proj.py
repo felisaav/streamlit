@@ -91,7 +91,7 @@ fig1 = px.pie(df2,
 
 
 	#
-fig3= sns.heatmap(cm, annot=True, cmap=plt.cm.Blues)
+fig3= px.imshow(cm)
 
 
 
