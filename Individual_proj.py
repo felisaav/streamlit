@@ -180,7 +180,7 @@ def main():
 #		with col4:
 		if submit_code:
 			st.info("Query Result")
-			if predict_category(msg)=1:
+			if predict_category(msg)[0]=1:
 				st.write('Your message is a spam')
 			else:
 				st.write('Your message is a normal email')
