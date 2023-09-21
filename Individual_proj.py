@@ -110,9 +110,9 @@ fig1 = px.pie(df2,
 @st.cache_data 
 def plot_matrix(cm, classes, title):
     plt.figure(figsize=(8, 6))
-    ax = sns.heatmap(cm, cmap="Blues", annot=True, xticklabels=classes, yticklabels=classes, cbar=False)
-    ax.set(title=title, xlabel="predicted label", ylabel="true label")
-    return plt
+    sns.heatmap(cm, cmap="Blues", annot=True, xticklabels=classes, yticklabels=classes, cbar=False)
+    plt.title(title)
+    st.pyplot(plt)  # Use st.pyplot to display the Seaborn heatmap
 
 #---------------------------
 #--Configuration of pages---
@@ -174,7 +174,7 @@ def main():
 		st.write(cm)
 		st.write(accuracy)
 		st.markdown("""---""")
-		st.pyplot(plot_matrix(cm, ['not spam', 'spam'], title))  # Display the Matplotlib figure using st.pyplot
+		plot_matrix(cm, ['not spam', 'spam'], title)  # Display the Seaborn heatmap directly
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		
