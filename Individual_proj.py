@@ -144,21 +144,23 @@ def main():
 	elif choice == "Results":
 		st.subheader("Results")
 		st.markdown("""---""")
+		
 		#st.pyplot(fig3)
 		st.write(cm)
 		st.write(accuracy)
+		
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		
-		col3,col4 = st.columns(2)
-		with col3:
-			with st.form(key='test_email'):
-				msg =st.text_area("write your email here")
-				submit_code = st.form_submit_button("Execute")
-		with col4:
-			if submit_code:
-				st.info("Query Submitted")
-				st.write(predict_category(msg))
+#		col3,col4 = st.columns(2)
+#		with col3:
+		with st.form(key='test_email'):
+			msg =st.text_area("write your email here")
+			submit_code = st.form_submit_button("Execute")
+#		with col4:
+		if submit_code:
+			st.info("Query Submitted")
+			st.write(predict_category(msg))
 						
 	else:	
 		st.subheader("About Me")
