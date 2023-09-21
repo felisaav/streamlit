@@ -91,7 +91,8 @@ fig1 = px.pie(df2,
 
 
 	#
-fig3= sns.heatmap(cm, annot=True, cmap=plt.cm.Blues)#px.imshow(cm)
+fig3 = plt.figure(figsize=(10, 4))
+sns.heatmap(cm, annot=True, cmap=plt.cm.Blues) #px.imshow(cm)
 
 
 
@@ -146,8 +147,9 @@ def main():
 
 	elif choice == "Results":
 		st.subheader("Results")
-		st.write(fig3)
+		#st.write(fig3)
 		#st.plotly_chart(fig3)
+		st.pyplot(fig3)
 					
 	else:	
 		st.subheader("About Me")
