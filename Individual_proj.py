@@ -67,20 +67,23 @@ X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'],data['spam'],
 #---Create naive bayes model---
 #------------------------------
 @st.cache_data
-def train_and_predict(X_train, X_test, Y_train, Y_test):
-
+def train_model(X_train, Y_train):
 	#vectorizing 
 	vectorizer = CountVectorizer(ngram_range=(1, 2)).fit(X_train)
 	X_train_vectorized = vectorizer.transform(X_train)
-
 	#train naive bayes model
 	model = MultinomialNB(alpha=0.1)
 	model.fit(X_train_vectorized, Y_train)
+	return model
+
+model=train_model(X_train, Y_train)
+
+@st.cache_data
+def predict_model(model, X_test):
 	predictions = model.predict(vectorizer.transform(X_test))
-
 	return predictions
-
-predictions=train_and_predict(X_train, X_test, Y_train, Y_test)
+	
+predictions=predict_model(model, X_test)
 
 	#calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
