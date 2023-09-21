@@ -112,7 +112,12 @@ def plot_matrix(cm, classes, title):
     plt.figure(figsize=(8, 6))
     sns.heatmap(cm, cmap="Blues", annot=True, xticklabels=classes, yticklabels=classes, cbar=False)
     plt.title(title)
-    st.pyplot(plt)  # Use st.pyplot to display the Seaborn heatmap
+    plt.tight_layout()
+    
+    # Save the heatmap as an image file
+    image_path = "heatmap.png"
+    plt.savefig(image_path)
+    return image_path
 
 #---------------------------
 #--Configuration of pages---
@@ -174,7 +179,9 @@ def main():
 		st.write(cm)
 		st.write(accuracy)
 		st.markdown("""---""")
-		plot_matrix(cm, ['not spam', 'spam'], title)  # Display the Seaborn heatmap directly
+		heatmap_image_path = plot_matrix(cm, ['not spam', 'spam'], title)  # Get the heatmap image path
+		st.image(heatmap_image_path)  # Display the heatmap image using st.image
+		
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		
