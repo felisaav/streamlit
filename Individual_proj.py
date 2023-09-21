@@ -56,7 +56,7 @@ def transform(df):
 	#Unify the strings once again
 	df['tokens'] = df['tokens'].apply(lambda x: ' '.join(x))
 	
-    	return df
+	return df
 
 transform(data)
 
