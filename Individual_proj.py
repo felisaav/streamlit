@@ -42,7 +42,7 @@ def transform(df):
 	
 	#Tokenize: create words from sentences, and removes punctuation
 	tokenizer = RegexpTokenizer(r'\w+')
-    	df['tokens'] = df.apply(lambda x: tokenizer.tokenize(x['text']), axis = 1)
+	df['tokens'] = df.apply(lambda x: tokenizer.tokenize(x['text']), axis = 1)
 
 	#Elimination of stop words
 	stop=stopwords.words('english')
