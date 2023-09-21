@@ -90,10 +90,14 @@ fig1 = px.pie(df2,
 	#3th distribution of lenght of spam / not spam emails
 
 
-fig3=px.imshow(cm)
+fig3=px.imshow(cm,
+	       title='Confusion Matrix',
+	       text_auto=True)
 
 
-
+#---------------------------
+#--Configuration of pages---
+#---------------------------
 def main():
 	st.title("Project - email spam analysis")
 
@@ -145,8 +149,7 @@ def main():
 
 	elif choice == "Results":
 		st.subheader("Results")
-		#st.write(sns.heatmap(cm, annot=True, cmap=plt.cm.Blues))
-		#st.plotly_chart(fig3)
+		st.markdown("""---""")
 		st.pyplot(fig3)
 					
 	else:	
