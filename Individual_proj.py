@@ -108,16 +108,9 @@ fig1 = px.pie(df2,
 	#3rd confusion matrix
 #fig3=px.imshow(cm)
 @st.cache_data 
-def plot_matrix(cm, classes, title):
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(cm, cmap="Blues", annot=True, xticklabels=classes, yticklabels=classes, cbar=False)
-    plt.title(title)
-    plt.tight_layout()
-    
-    # Save the heatmap as an image file
-    image_path = "heatmap.png"
-    plt.savefig(image_path)
-    return image_path
+def plot_matrix(cm, classes):
+    cm_df = pd.DataFrame(cm, index=classes, columns=classes)
+    return cm_df
 
 #---------------------------
 #--Configuration of pages---
@@ -179,8 +172,9 @@ def main():
 		st.write(cm)
 		st.write(accuracy)
 		st.markdown("""---""")
-		heatmap_image_path = plot_matrix(cm, ['not spam', 'spam'], title)  # Get the heatmap image path
-		st.image(heatmap_image_path)  # Display the heatmap image using st.image
+		st.write("Confusion Matrix:")
+		st.dataframe(plot_matrix(cm, ['not spam', 'spam']))
+		st.write(f"Accuracy: {accuracy:.2f}%")
 		
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
