@@ -86,10 +86,7 @@ fig1 = px.pie(df2,
 	#2nd distribution of lenght of spam / not spam emails
 
 	#3rd confusion matrix
-fig3=px.imshow(cm,
-	       labels=dict(x="Predicted", y="Real", color="# cases"),
-               x=['False', 'True'],
-               y=['False', 'True'])
+fig3=px.imshow(cm)
 
 
 #---------------------------
@@ -148,6 +145,9 @@ def main():
 		st.subheader("Results")
 		st.markdown("""---""")
 		st.pyplot(fig3)
+		st.write(cm)
+		st.write(accuracy)
+		
 					
 	else:	
 		st.subheader("About Me")
