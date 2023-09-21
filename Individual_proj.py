@@ -101,7 +101,7 @@ fig1 = px.pie(df2,
              names='spam',
              title='Distribution of spam/not spam emails',
              labels={'text':'# of cases'})#hover_data=['text'], 
-fig1.update_traces(textposition='inside', textinfo='percent+label')
+#fig1.update_traces(textposition='inside', textinfo='percent+label')
 
 	#2nd distribution of lenght of spam / not spam emails
 
