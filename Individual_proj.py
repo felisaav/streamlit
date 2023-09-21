@@ -33,6 +33,34 @@ data = load_data('emails.csv')#pd.read_csv('emails.csv')
 #------------------------------
 #---Create naive bayes model---
 #------------------------------
+
+# transform dataframe
+@st.cache_data
+def transform(df):
+	#Create a lenght column with the len of emails
+	df['length'] = df['text'].map(lambda text: len(str(text)))
+	
+	#Tokenize: create words from sentences, and removes punctuation
+	tokenizer = RegexpTokenizer(r'\w+')
+    	df['tokens'] = df.apply(lambda x: tokenizer.tokenize(x['text']), axis = 1)
+
+	#Elimination of stop words
+	stop=stopwords.words('english')
+	stop.append('Subject')
+	df['tokens'] = df['tokens'].apply(lambda x: [item for item in x if item not in stop])
+
+	#Stemming
+	stemmer = PorterStemmer()
+	df['tokens'] = df['tokens'].apply(lambda x: [stemmer.stem(item) for item in x])
+
+	#Unify the strings once again
+	df['tokens'] = df['tokens'].apply(lambda x: ' '.join(x))
+	
+    	return df
+
+transform(data)
+
+'''
 	#Create a lenght column with the len of emails
 data['length'] = data['text'].map(lambda text: len(str(text)))
 
@@ -51,6 +79,8 @@ data['tokens'] = data['tokens'].apply(lambda x: [stemmer.stem(item) for item in 
 
 	#Unify the strings once again
 data['tokens'] = data['tokens'].apply(lambda x: ' '.join(x))
+
+'''
 
 	#create train/test split
 X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'], 
