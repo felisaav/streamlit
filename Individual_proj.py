@@ -77,13 +77,7 @@ def train_model(X_train, Y_train):
 	return model, vectorizer
 
 model, vectorizer=train_model(X_train, Y_train)
-
-@st.cache_data
-def predict_model(model, X_test):
-	predictions = model.predict(vectorizer.transform(X_test))
-	return predictions
-	
-predictions=predict_model(model, X_test)
+predictions = model.predict(vectorizer.transform(X_test))
 
 	#calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
