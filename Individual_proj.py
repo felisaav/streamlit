@@ -13,7 +13,8 @@ nltk.download('stopwords')
 from nltk.stem.porter import *
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
-import sklearn
+#import sklearn
+from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import confusion_matrix, accuracy_score
