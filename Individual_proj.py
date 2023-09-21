@@ -174,7 +174,7 @@ def main():
 		st.write(cm)
 		st.write(accuracy)
 		st.markdown("""---""")
-    		st.pyplot(plot_matrix(cm, ['not spam', 'spam'], title))  # Display the Matplotlib figure using st.pyplot
+		st.pyplot(plot_matrix(cm, ['not spam', 'spam'], title))  # Display the Matplotlib figure using st.pyplot
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		
