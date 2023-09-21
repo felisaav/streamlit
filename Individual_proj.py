@@ -91,7 +91,6 @@ fig1 = px.pie(df2,
 
 
 fig3=px.imshow(cm,
-	       title='Confusion Matrix',
 	       text_auto=True)
 
 
