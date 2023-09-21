@@ -147,8 +147,17 @@ def main():
 		#st.pyplot(fig3)
 		st.write(cm)
 		st.write(accuracy)
-		
-					
+		st.markdown("""---""")
+		st.subheader("Test a new email and see if it is a spam or not")
+		with col1:
+			with st.form(key='test_email'):
+				msg =st.text_area("write your email here")
+				submit_code = st.form_submit_button("Execute")
+		with col2:
+			if submit_code:
+				st.info("Query Submitted")
+				st.write(predict_category(msg))
+						
 	else:	
 		st.subheader("About Me")
 		st.write('yo amo windows')
