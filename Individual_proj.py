@@ -91,7 +91,7 @@ fig1 = px.pie(df2,
 
 
 	#
-fig3= sns.heatmap(cm, annot=True, cmap=plt.cm.Blues);	
+fig3= sns.heatmap(cm, annot=True, cmap=plt.cm.Blues)
 
 
 
@@ -146,7 +146,7 @@ def main():
 
 	elif choice == "Results":
 		st.subheader("Results")
-		st.seaborn_chart(fig3)
+		st.plotly_chart(fig3)
 					
 	else:	
 		st.subheader("About Me")
