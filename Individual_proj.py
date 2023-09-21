@@ -22,7 +22,12 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 #------------------------------
 # read data from email.csv file
 #------------------------------
-data = pd.read_csv('emails.csv')
+@st.cache_data 
+def load_data(url):
+    df = pd.read_csv(url)
+    return df
+
+data = load_data('emails.csv')#pd.read_csv('emails.csv')
 
 
 #------------------------------
