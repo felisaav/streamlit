@@ -81,15 +81,16 @@ data['tokens'] = data['tokens'].apply(lambda x: [stemmer.stem(item) for item in 
 data['tokens'] = data['tokens'].apply(lambda x: ' '.join(x))
 
 '''
-
-	#create train/test split
-X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'], 
-                                                    data['spam'],
-                                                    test_size= 0.2,
-                                                    random_state=0)
-
+#------------------------------
+#---Create naive bayes model---
+#------------------------------
 @st.cache_data
-def train_and_predict(X_train, Y_train, X_test):
+def train_and_predict(df):
+	#create train/test split
+	X_train, X_test, Y_train, Y_test = train_test_split(df['tokens'], 
+	                                                    df['spam'],
+	                                                    test_size= 0.2,
+	                                                    random_state=0)
 	#vectorizing 
 	vectorizer = CountVectorizer(ngram_range=(1, 2)).fit(X_train)
 	X_train_vectorized = vectorizer.transform(X_train)
@@ -101,6 +102,7 @@ def train_and_predict(X_train, Y_train, X_test):
 
 	return predictions
 
+train_and_predict(data)
 
 	#calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
