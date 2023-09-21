@@ -71,6 +71,7 @@ accuracy=100 * sum(predictions == Y_test) / len(predictions)
 cm = confusion_matrix(Y_test, predictions)
 
 	#function predict spam/not spam emails
+@st.cache_data 
 def predict_category(s, model=model):
     pred = model.predict(vectorizer.transform([s]))
     return pred
