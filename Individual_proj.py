@@ -83,15 +83,13 @@ fig1 = px.pie(df2,
              title='Distribution of spam/not spam emails',
              hover_data=['text'], labels={'text':'# of cases'})
 
-	
+	#2nd distribution of lenght of spam / not spam emails
 
-
-
-	#3th distribution of lenght of spam / not spam emails
-
-
+	#3rd confusion matrix
 fig3=px.imshow(cm,
-	       text_auto=True)
+	       labels=dict(x="Predicted", y="Real", color="# cases"),
+               x=['False', 'True'],
+               y=['False', 'True'])
 
 
 #---------------------------
