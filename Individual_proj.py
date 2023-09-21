@@ -179,8 +179,11 @@ def main():
 			submit_code = st.form_submit_button("Execute")
 #		with col4:
 		if submit_code:
-			st.info("Query Submitted")
-			st.write(predict_category(msg))
+			st.info("Query Result")
+			if predict_category(msg)=1:
+				st.write('Your message is a spam')
+			else:
+				st.write('Your message is a normal email')
 						
 	else:	
 		st.subheader("About Me")
