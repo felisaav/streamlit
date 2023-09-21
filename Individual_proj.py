@@ -80,7 +80,7 @@ def train_and_predict(X_train, X_test, Y_train, Y_test):
 
 	return predictions
 
-train_and_predict(X_train, X_test, Y_train, Y_test)
+predictions=train_and_predict(X_train, X_test, Y_train, Y_test)
 
 	#calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
