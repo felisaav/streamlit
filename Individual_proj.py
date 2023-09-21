@@ -107,7 +107,10 @@ fig1 = px.pie(df2,
 
 	#3rd confusion matrix
 #fig3=px.imshow(cm)
-
+@st.cache_data 
+def plot_matrix(cm, classes, title):
+  ax = sns.heatmap(cm, cmap="Blues", annot=True, xticklabels=classes, yticklabels=classes, cbar=False)
+  ax.set(title=title, xlabel="predicted label", ylabel="true label")
 
 #---------------------------
 #--Configuration of pages---
@@ -168,7 +171,7 @@ def main():
 		#st.pyplot(fig3)
 		st.write(cm)
 		st.write(accuracy)
-		
+		st.pyplot(plot_matrix(cm, ['not spam', 'spam'], title))
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		
