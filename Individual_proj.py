@@ -109,8 +109,10 @@ fig1 = px.pie(df2,
 #fig3=px.imshow(cm)
 @st.cache_data 
 def plot_matrix(cm, classes, title):
-  ax = sns.heatmap(cm, cmap="Blues", annot=True, xticklabels=classes, yticklabels=classes, cbar=False)
-  ax.set(title=title, xlabel="predicted label", ylabel="true label")
+    plt.figure(figsize=(8, 6))
+    ax = sns.heatmap(cm, cmap="Blues", annot=True, xticklabels=classes, yticklabels=classes, cbar=False)
+    ax.set(title=title, xlabel="predicted label", ylabel="true label")
+    return plt
 
 #---------------------------
 #--Configuration of pages---
@@ -171,7 +173,10 @@ def main():
 		#st.pyplot(fig3)
 		st.write(cm)
 		st.write(accuracy)
-		st.pyplot(plot_matrix(cm, ['not spam', 'spam'], title))
+		
+		plot_fig = plot_matrix(cm, ['not spam', 'spam'], title)  # Get the Matplotlib figure
+    		st.pyplot(plot_fig)  # Display the Matplotlib figure using st.pyplot
+		
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		
