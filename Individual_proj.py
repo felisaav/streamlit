@@ -27,11 +27,11 @@ def load_data(url):
     df = pd.read_csv(url)
     return df
 
-data = load_data('emails.csv')#pd.read_csv('emails.csv')
+data = load_data('emails.csv')
 
 
 #------------------------------
-#---Create naive bayes model---
+#---transform dataframe---
 #------------------------------
 
 # transform dataframe
@@ -64,7 +64,7 @@ data=transform(data)
 X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'],data['spam'],test_size= 0.2,random_state=0)
 
 #------------------------------
-#---Create naive bayes model---
+#---train naive bayes model---
 #------------------------------
 @st.cache_data
 def train_model(X_train, Y_train):
@@ -79,11 +79,11 @@ def train_model(X_train, Y_train):
 model, vectorizer=train_model(X_train, Y_train)
 predictions = model.predict(vectorizer.transform(X_test))
 
-	#calculate accuracy of the model
+#calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
 cm = confusion_matrix(Y_test, predictions)
 
-	#function predict spam/not spam emails
+#function predict spam/not spam emails
 @st.cache_data 
 def predict_category(s, model=model):
     pred = model.predict(vectorizer.transform([s]))
