@@ -90,9 +90,7 @@ fig1 = px.pie(df2,
 	#3th distribution of lenght of spam / not spam emails
 
 
-	#
-fig3 = plt.figure(figsize=(10, 4))
-sns.heatmap(cm, annot=True, cmap=plt.cm.Blues) #px.imshow(cm)
+#sns.heatmap(cm, annot=True, cmap=plt.cm.Blues) #px.imshow(cm)
 
 
 
@@ -147,9 +145,9 @@ def main():
 
 	elif choice == "Results":
 		st.subheader("Results")
-		#st.write(fig3)
+		st.write(sns.heatmap(cm, annot=True, cmap=plt.cm.Blues))
 		#st.plotly_chart(fig3)
-		st.pyplot(fig3)
+		#st.pyplot(fig3)
 					
 	else:	
 		st.subheader("About Me")
