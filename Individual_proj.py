@@ -63,11 +63,7 @@ def train_model(X_train, Y_train):
 	model.fit(X_train_vectorized, Y_train)
 	return model, vectorizer
 
-#function predict spam/not spam emails
-@st.cache_data 
-def predict_category(s, model=model):
-    pred = model.predict(vectorizer.transform([s]))
-    return pred
+
 
 #------------------------------
 #---------run the code---------
@@ -79,12 +75,21 @@ data=transform(data)
 X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'],data['spam'],test_size= 0.2,random_state=0)
 
 model, vectorizer=train_model(X_train, Y_train)
+
+
+
 predictions = model.predict(vectorizer.transform(X_test))
 
 #calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
 cm = confusion_matrix(Y_test, predictions)
 
+#function predict spam/not spam emails
+@st.cache_data 
+def predict_category(s, model=model):
+    pred = model.predict(vectorizer.transform([s]))
+    return pred
+	
 #---------------------------
 #------Create charts--------
 #---------------------------
