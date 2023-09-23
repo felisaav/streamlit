@@ -113,7 +113,9 @@ def plot_matrix(cm, classes):
     return cm_df
 
 	#distribution of email len (spam/not spam) emails
-
+fig2, ax = plt.subplots()
+data.hist(column='length', by='spam', bins=50, ax=ax)
+st.pyplot(fig2)
 #---------------------------
 #--Configuration of pages---
 #---------------------------
@@ -154,13 +156,7 @@ def main():
 		
 		st.plotly_chart(fig1)
 		st.markdown("""---""")
-		st.pyplot(data.hist(column='length', by='spam', bins=50))
-
-		st.write('I hate windows')
-		st.write(pd.DataFrame({
- 			'first_column':[1,2,3,4],
-  			'second_column':[10,20,30,40]
-		}))
+		st.pyplot(fig2)
 
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
