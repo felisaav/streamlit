@@ -105,9 +105,9 @@ fig1 = px.pie(df2,
 	#2nd distribution of lenght of spam / not spam emails
 fig2, ax = plt.subplots()
 # Plot the histogram for spam = 0 in blue
-data[data['spam'] == 0]['length'].plot.hist(bins=50, alpha=0.5, color='blue', label='spam = 0', ax=ax)
+data[data['spam'] == 0]['length'].plot.hist(bins=50, alpha=0.5, color='blue',density=True, label='spam = 0', ax=ax)
 # Plot the histogram for spam = 1 in orange
-data[data['spam'] == 1]['length'].plot.hist(bins=50, alpha=0.5, color='orange', label='spam = 1', ax=ax)
+data[data['spam'] == 1]['length'].plot.hist(bins=50, alpha=0.5, color='orange',density=True, label='spam = 1', ax=ax)
 # Add labels and legend
 ax.set_xlabel('Length')
 ax.set_ylabel('Frequency')
