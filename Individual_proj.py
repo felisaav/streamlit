@@ -111,9 +111,11 @@ ax.set_ylabel('Frequency')
 ax.set_title('Distribution of Email Lengths')
 ax.legend()
 
-#data.hist(column='length', by='spam', bins=50, ax=ax)
+#3rd confusion matrix
+fig3, ax = plt.subplots()
+sns.heatmap(cm, ax=['not spam', 'spam'])
 
-	#3rd confusion matrix
+
 #fig3=px.imshow(cm)
 @st.cache_data 
 def plot_matrix(cm, classes):
@@ -168,7 +170,8 @@ def main():
 		st.subheader("Results")
 		st.markdown("""---""")
 		st.write("Confusion Matrix:")
-		st.dataframe(plot_matrix(cm, ['not spam', 'spam']))
+		#st.dataframe(plot_matrix(cm, ['not spam', 'spam']))
+		st.write(fig3)
 		st.write(f"Accuracy: {accuracy:.2f}%")
 		
 		st.markdown("""---""")
