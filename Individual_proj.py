@@ -171,7 +171,7 @@ def main():
 		st.markdown("""---""")
 		st.write("Confusion Matrix:")
 		#st.dataframe(plot_matrix(cm, ['not spam', 'spam']))
-		st.write(fig3)
+		st.pyplot(fig3)
 		st.write(f"Accuracy: {accuracy:.2f}%")
 		
 		st.markdown("""---""")
