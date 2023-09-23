@@ -20,19 +20,13 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import confusion_matrix, accuracy_score
 
 #------------------------------
-# read data from email.csv file
+#----------functions-----------
 #------------------------------
+# read data from email.csv file
 @st.cache_data 
 def load_data(url):
     df = pd.read_csv(url)
     return df
-
-data = load_data('emails.csv')
-
-
-#------------------------------
-#---transform dataframe---
-#------------------------------
 
 # transform dataframe
 @st.cache_data
@@ -57,15 +51,8 @@ def transform(df):
 	df['tokens'] = df['tokens'].apply(lambda x: ' '.join(x))
 	
 	return df
-
-data=transform(data)
-
-#create train/test split
-X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'],data['spam'],test_size= 0.2,random_state=0)
-
-#------------------------------
+	
 #---train naive bayes model---
-#------------------------------
 @st.cache_data
 def train_model(X_train, Y_train):
 	#vectorizing 
@@ -76,6 +63,21 @@ def train_model(X_train, Y_train):
 	model.fit(X_train_vectorized, Y_train)
 	return model, vectorizer
 
+#function predict spam/not spam emails
+@st.cache_data 
+def predict_category(s, model=model):
+    pred = model.predict(vectorizer.transform([s]))
+    return pred
+
+#------------------------------
+#---------run the code---------
+#------------------------------
+data = load_data('emails.csv')
+data=transform(data)
+
+#create train/test split
+X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'],data['spam'],test_size= 0.2,random_state=0)
+
 model, vectorizer=train_model(X_train, Y_train)
 predictions = model.predict(vectorizer.transform(X_test))
 
@@ -83,15 +85,8 @@ predictions = model.predict(vectorizer.transform(X_test))
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
 cm = confusion_matrix(Y_test, predictions)
 
-#function predict spam/not spam emails
-@st.cache_data 
-def predict_category(s, model=model):
-    pred = model.predict(vectorizer.transform([s]))
-    return pred
-
-
 #---------------------------
-#---Create charts for EDA---
+#------Create charts--------
 #---------------------------
 df2=data.groupby('spam').count().reset_index().replace(0,"not spam").replace(1,"spam")
 
@@ -100,10 +95,21 @@ fig1 = px.pie(df2,
              values='text',
              names='spam',
              title='Distribution of spam/not spam emails',
-             labels={'text':'# of cases'})#hover_data=['text'], 
-#fig1.update_traces(textposition='inside', textinfo='percent+label')
+             labels={'text':'# of cases'})
 
 	#2nd distribution of lenght of spam / not spam emails
+fig2, ax = plt.subplots()
+# Plot the histogram for spam = 0 in blue
+data[data['spam'] == 0]['length'].plot.hist(bins=50, alpha=0.5, color='blue', label='spam = 0', ax=ax)
+# Plot the histogram for spam = 1 in orange
+data[data['spam'] == 1]['length'].plot.hist(bins=50, alpha=0.5, color='orange', label='spam = 1', ax=ax)
+# Add labels and legend
+ax.set_xlabel('Length')
+ax.set_ylabel('Frequency')
+ax.set_title('Distribution of Email Lengths')
+ax.legend()
+
+#data.hist(column='length', by='spam', bins=50, ax=ax)
 
 	#3rd confusion matrix
 #fig3=px.imshow(cm)
@@ -113,17 +119,15 @@ def plot_matrix(cm, classes):
     return cm_df
 
 	#distribution of email len (spam/not spam) emails
-fig2, ax = plt.subplots()
-data.hist(column='length', by='spam', bins=50, ax=ax)
+
+
 #---------------------------
 #--Configuration of pages---
 #---------------------------
 def main():
 	st.title("Project - email spam analysis")
-
 	menu = ["Problem description","Descriptive Analysis","Predictive Model","Results","About Me"]
 	choice = st.sidebar.selectbox("Menu",menu)
-
 
 	if choice == "Problem description":
 		st.subheader("Problem Description")
@@ -147,15 +151,12 @@ def main():
 			st.write("not spam emails examples")
 			st.dataframe(data.loc[data["spam"]==0]["text"].head())
 
-
-
 	elif choice == "Descriptive Analysis":
 		st.subheader("Descriptive Analysis")
 		st.markdown("""---""")
-		
-		st.plotly_chart(fig1)
+		st.plotly_chart(fig1) #plotly chart
 		st.markdown("""---""")
-		st.pyplot(fig2)
+		st.pyplot(fig2) #matplotlib chart
 
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
@@ -164,24 +165,15 @@ def main():
 	elif choice == "Results":
 		st.subheader("Results")
 		st.markdown("""---""")
-		
-		#st.pyplot(fig3)
-		st.write(cm)
-		st.write(accuracy)
-		st.markdown("""---""")
 		st.write("Confusion Matrix:")
 		st.dataframe(plot_matrix(cm, ['not spam', 'spam']))
 		st.write(f"Accuracy: {accuracy:.2f}%")
 		
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
-		
-#		col3,col4 = st.columns(2)
-#		with col3:
 		with st.form(key='test_email'):
 			msg =st.text_area("write your email here")
 			submit_code = st.form_submit_button("Execute")
-#		with col4:
 		if submit_code:
 			st.info("Query Result")
 			if predict_category(msg)[0]==1:
