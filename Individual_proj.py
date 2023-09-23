@@ -169,8 +169,7 @@ def main():
 		st.subheader("Results")
 		st.markdown("""---""")
 		st.pyplot(fig3) #seaborn chart
-		st.dataframe(pd.DataFrame(cm, index=['True Negative', 'False Positive', 'False Negative', 'True Positive'], columns=['Predicted Negative', 'Predicted Positive']))
-		st.write(cm)
+		st.dataframe(pd.DataFrame(cm))
 		st.write(f"Accuracy: {accuracy:.2f}%")
 		
 		st.markdown("""---""")
