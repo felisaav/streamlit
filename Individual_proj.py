@@ -96,12 +96,13 @@ def predict_category(s, model=model):
 df2=data.groupby('spam').count().reset_index().replace(0,"not spam").replace(1,"spam")
 
 	#1st pie chart with distribution
+custom_colors = ['#ff7f0e', '#1f77b4'] 
 fig1 = px.pie(df2,
              values='text',
              names='spam',
              title='Distribution of spam/not spam emails',
              labels={'text':'# of cases'},
-	     color_discrete_map={0: 'blue', 1: 'orange'})
+	     color_discrete_map={0: custom_colors[0], 1: custom_colors[1]})
 
 	#2nd distribution of lenght of spam / not spam emails
 fig2, ax = plt.subplots()
