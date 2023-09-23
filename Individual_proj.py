@@ -100,7 +100,8 @@ fig1 = px.pie(df2,
              values='text',
              names='spam',
              title='Distribution of spam/not spam emails',
-             labels={'text':'# of cases'})
+             labels={'text':'# of cases'},
+	     color_discrete_map={0: 'blue', 1: 'orange'})
 
 	#2nd distribution of lenght of spam / not spam emails
 fig2, ax = plt.subplots()
