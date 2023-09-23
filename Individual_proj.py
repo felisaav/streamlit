@@ -113,7 +113,7 @@ ax.legend()
 
 #3rd confusion matrix
 fig3, ax = plt.subplots()
-sns.heatmap(cm, ax=['not spam', 'spam'])
+sns.heatmap(cm)
 
 
 #fig3=px.imshow(cm)
