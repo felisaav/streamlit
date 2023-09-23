@@ -171,9 +171,8 @@ def main():
 	elif choice == "Results":
 		st.subheader("Results")
 		st.markdown("""---""")
-		st.write("Confusion Matrix:")
-		#st.dataframe(plot_matrix(cm, ['not spam', 'spam']))
-		st.pyplot(fig3)
+		st.pyplot(fig3) #seaborn chart
+		st.write(cm)
 		st.write(f"Accuracy: {accuracy:.2f}%")
 		
 		st.markdown("""---""")
