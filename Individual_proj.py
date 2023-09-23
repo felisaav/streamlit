@@ -115,7 +115,6 @@ def plot_matrix(cm, classes):
 	#distribution of email len (spam/not spam) emails
 fig2, ax = plt.subplots()
 data.hist(column='length', by='spam', bins=50, ax=ax)
-st.pyplot(fig2)
 #---------------------------
 #--Configuration of pages---
 #---------------------------
