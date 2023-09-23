@@ -112,6 +112,8 @@ def plot_matrix(cm, classes):
     cm_df = pd.DataFrame(cm, index=classes, columns=classes)
     return cm_df
 
+	#distribution of email len (spam/not spam) emails
+
 #---------------------------
 #--Configuration of pages---
 #---------------------------
@@ -151,8 +153,8 @@ def main():
 		st.markdown("""---""")
 		
 		st.plotly_chart(fig1)
-
-
+		st.markdown("""---""")
+		st.pyplot(data.hist(column='length', by='spam', bins=50))
 
 		st.write('I hate windows')
 		st.write(pd.DataFrame({
