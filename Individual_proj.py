@@ -63,8 +63,6 @@ def train_model(X_train, Y_train):
 	model.fit(X_train_vectorized, Y_train)
 	return model, vectorizer
 
-
-
 #------------------------------
 #---------run the code---------
 #------------------------------
@@ -75,8 +73,6 @@ data=transform(data)
 X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'],data['spam'],test_size= 0.2,random_state=0)
 
 model, vectorizer=train_model(X_train, Y_train)
-
-
 
 predictions = model.predict(vectorizer.transform(X_test))
 
@@ -93,10 +89,9 @@ def predict_category(s, model=model):
 #---------------------------
 #------Create charts--------
 #---------------------------
+#1st pie chart with distribution
 df2=data.groupby('spam').count().reset_index().replace(0,"not spam").replace(1,"spam")
-
-	#1st pie chart with distribution
-custom_colors = ['#ff7f0e', '#1f77b4'] 
+custom_colors = ['blue', 'orange'] 
 fig1 = px.pie(df2,
              values='text',
              names='spam',
@@ -104,7 +99,7 @@ fig1 = px.pie(df2,
              labels={'text':'# of cases'},
 	     color_discrete_map={0: custom_colors[0], 1: custom_colors[1]})
 
-	#2nd distribution of lenght of spam / not spam emails
+#2nd distribution of lenght of spam / not spam emails
 fig2, ax = plt.subplots()
 # Plot the histogram for spam = 0 in blue
 data[data['spam'] == 0]['length'].plot.hist(bins=50, alpha=0.5, color='blue',density=True, label='spam = 0', ax=ax)
