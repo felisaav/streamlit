@@ -113,7 +113,7 @@ ax.legend()
 
 #3rd confusion matrix
 fig3, ax = plt.subplots()
-sns.heatmap(cm)
+sns.heatmap(cm, annot=True,ax=ax)
 
 
 #fig3=px.imshow(cm)
