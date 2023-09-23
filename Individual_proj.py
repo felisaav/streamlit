@@ -97,7 +97,8 @@ fig1 = px.pie(df2,
              names='spam',
              title='Distribution of spam/not spam emails',
              labels={'text':'# of cases'})
-fig1.update_traces(marker=dict(colors=colors))
+fig1.update_traces(marker=dict(colors=custom_colors))
+
 #2nd distribution of lenght of spam / not spam emails
 fig2, ax = plt.subplots()
 # Plot the histogram for spam = 0 in blue
