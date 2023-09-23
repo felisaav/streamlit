@@ -101,22 +101,19 @@ fig1.update_traces(marker=dict(colors=custom_colors))
 
 #2nd distribution of lenght of spam / not spam emails
 fig2, ax = plt.subplots()
-# Plot the histogram for spam = 0 in blue
 data[data['spam'] == 0]['length'].plot.hist(bins=50, alpha=0.5, color='blue',density=True, label='spam = 0', ax=ax)
-# Plot the histogram for spam = 1 in orange
 data[data['spam'] == 1]['length'].plot.hist(bins=50, alpha=0.5, color='orange',density=True, label='spam = 1', ax=ax)
-# Add labels and legend
 ax.set_xlabel('Length')
 ax.set_ylabel('Frequency')
 ax.set_title('Distribution of Email Lengths')
 ax.legend()
 
 #3rd confusion matrix
-fig3, ax = plt.subplots()
-sns.heatmap(cm/np.sum(cm))#, annot=True, fmt='.2%', cmap='Blues') #cm,annot=True)
-ax.set_title('Confusion Matrix')
-ax.set_xlabel('Predicted')
-ax.set_ylabel('Real')
+fig3, ax2 = plt.subplots()
+sns.heatmap(cm/np.sum(cm), annot=True, fmt='.2%', cmap='Blues')
+ax2.set_title('Confusion Matrix')
+ax2.set_xlabel('Predicted')
+ax2.set_ylabel('Real')
 
 #fig3=px.imshow(cm)
 @st.cache_data 
