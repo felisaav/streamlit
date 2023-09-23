@@ -113,7 +113,7 @@ ax.legend()
 
 #3rd confusion matrix
 fig3, ax = plt.subplots()
-sns.heatmap(cm/np.sum(cm), annot=True, fmt='.2%', cmap='Blues') #cm,annot=True)
+sns.heatmap(cm/np.sum(cm))#, annot=True, fmt='.2%', cmap='Blues') #cm,annot=True)
 ax.set_title('Confusion Matrix')
 ax.set_xlabel('Predicted')
 ax.set_ylabel('Real')
