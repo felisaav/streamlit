@@ -118,9 +118,9 @@ fig3, ax2 = plt.subplots()
 #---------------------------------------------
 # Create a heatmap using Plotly
 heatmap = go.Heatmap(z=cm,
-                     x=['Predicted 0', 'Predicted 1'],
-                     y=['Real 0', 'Real 1'],
-                     colorscale='Blues')
+		     x=['Predicted 0', 'Predicted 1'],
+		     y=['Real 0', 'Real 1'],
+		     colorscale='Blues')
 
 layout = go.Layout(title='Confusion Matrix')
 
