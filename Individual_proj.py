@@ -109,8 +109,8 @@ ax.set_title('Distribution of Email Lengths')
 ax.legend()
 
 #3rd confusion matrix
-#fig3, ax2 = plt.subplots()
-fig3, ax2 = plt.subplots(figsize=(6, 6)) 
+fig3, ax2 = plt.subplots()
+#fig3, ax2 = plt.subplots(figsize=(6, 6)) 
 sns.heatmap(cm, annot=True, cmap='Blues', fmt="d", ax=ax2)
 ax2.set_title('Confusion Matrix')
 ax2.set_xlabel('Predicted')
