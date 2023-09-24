@@ -111,16 +111,10 @@ ax.legend()
 #3rd confusion matrix
 fig3, ax2 = plt.subplots()
 #fig3, ax2 = plt.subplots(figsize=(6, 6)) 
-sns.heatmap(cm, annot=True, cmap='Blues', fmt="d", ax=ax2)
+sns.heatmap(cm, cmap='Blues', fmt="d", ax=ax2)#, annot=True
 ax2.set_title('Confusion Matrix')
 ax2.set_xlabel('Predicted')
 ax2.set_ylabel('Real')
-# Save the figure to a BytesIO object
-#--------------------
-buf = BytesIO()
-fig3.savefig(buf, format="png")
-buf.seek(0)
-#--------------------
 
 @st.cache_data 
 def plot_matrix(cm, classes):
@@ -174,10 +168,12 @@ def main():
 	elif choice == "Results":
 		st.subheader("Results")
 		st.markdown("""---""")
-		#st.pyplot(fig3) #seaborn chart
-		st.image(buf, format="png")
-		st.dataframe(pd.DataFrame(cm))
-		st.write(f"Accuracy: {accuracy:.2f}%")
+		col1,col2 = st.columns(2)
+		with col1:
+			st.pyplot(fig3) #seaborn chart
+		with col2:
+			st.dataframe(pd.DataFrame(cm))
+			st.write(f"Accuracy: {accuracy:.2f}%")
 		
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
