@@ -109,11 +109,16 @@ ax.set_title('Distribution of Email Lengths')
 ax.legend()
 
 #3rd confusion matrix
-fig3, ax2 = plt.subplots()
-sns.heatmap(cm, annot=True)#, cmap='Blues', fmt="d", ax=ax2)#
-ax2.set_title('Confusion Matrix')
-ax2.set_xlabel('Predicted')
-ax2.set_ylabel('Real')
+#fig3, ax2 = plt.subplots()
+#sns.heatmap(cm, annot=True, fmt="d")#, cmap='Blues', ax=ax2)#
+#ax2.set_title('Confusion Matrix')
+#ax2.set_xlabel('Predicted')
+#ax2.set_ylabel('Real')
+
+heatmap = go.Heatmap(z=cm, x=['0', '1'], y=['0', '1'], colorscale='Blues')
+layout = go.Layout(title='Confusion Metrix')
+fig3 = go.Figure(data=[heatmap], layout=layout)
+
 
 #@st.cache_data 
 #def plot_matrix(cm, classes):
