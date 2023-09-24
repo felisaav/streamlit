@@ -110,12 +110,11 @@ ax.legend()
 
 #3rd confusion matrix
 fig3, ax2 = plt.subplots()
-sns.heatmap(cm, annot=True, cmap='Blues')
+sns.heatmap(cm, annot=True, cmap='Blues', fmt=".1f")
 ax2.set_title('Confusion Matrix')
 ax2.set_xlabel('Predicted')
 ax2.set_ylabel('Real')
 
-#fig3=px.imshow(cm)
 @st.cache_data 
 def plot_matrix(cm, classes):
     cm_df = pd.DataFrame(cm, index=classes, columns=classes)
