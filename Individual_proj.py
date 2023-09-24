@@ -115,10 +115,10 @@ ax2.set_title('Confusion Matrix')
 ax2.set_xlabel('Predicted')
 ax2.set_ylabel('Real')
 
-@st.cache_data 
-def plot_matrix(cm, classes):
-    cm_df = pd.DataFrame(cm, index=classes, columns=classes)
-    return cm_df
+#@st.cache_data 
+#def plot_matrix(cm, classes):
+#    cm_df = pd.DataFrame(cm, index=classes, columns=classes)
+#    return cm_df
 
 	#distribution of email len (spam/not spam) emails
 
