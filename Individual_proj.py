@@ -115,9 +115,18 @@ fig3, ax2 = plt.subplots()
 #ax2.set_xlabel('Predicted')
 #ax2.set_ylabel('Real')
 
-heatmap = go.Heatmap(z=cm, x=['0', '1'], y=['0', '1'], colorscale='Blues')
-layout = go.Layout(title='Confusion Metrix')
+#---------------------------------------------
+# Create a heatmap using Plotly
+heatmap = go.Heatmap(z=cm,
+                     x=['Predicted 0', 'Predicted 1'],
+                     y=['Real 0', 'Real 1'],
+                     colorscale='Blues')
+
+layout = go.Layout(title='Confusion Matrix')
+
 fig3 = go.Figure(data=[heatmap], layout=layout)
+
+#---------------------------------------------
 
 
 #@st.cache_data 
@@ -174,7 +183,8 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
 		with col1:
-			st.pyplot(fig3) #seaborn chart
+			#st.pyplot(fig3) #seaborn chart
+			st.plotly_chart(fig3)
 		with col2:
 			st.dataframe(pd.DataFrame(cm))
 			st.write(f"Accuracy: {accuracy:.2f}%")
