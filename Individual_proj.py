@@ -115,6 +115,12 @@ sns.heatmap(cm, annot=True, cmap='Blues', fmt="d", ax=ax2)
 ax2.set_title('Confusion Matrix')
 ax2.set_xlabel('Predicted')
 ax2.set_ylabel('Real')
+# Save the figure to a BytesIO object
+#--------------------
+buf = BytesIO()
+fig3.savefig(buf, format="png")
+buf.seek(0)
+#--------------------
 
 @st.cache_data 
 def plot_matrix(cm, classes):
@@ -168,7 +174,8 @@ def main():
 	elif choice == "Results":
 		st.subheader("Results")
 		st.markdown("""---""")
-		st.pyplot(fig3) #seaborn chart
+		#st.pyplot(fig3) #seaborn chart
+		st.image(buf, format="png")
 		st.dataframe(pd.DataFrame(cm))
 		st.write(f"Accuracy: {accuracy:.2f}%")
 		
