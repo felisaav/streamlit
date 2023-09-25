@@ -123,7 +123,8 @@ heatmap = go.Heatmap(z=cm,
 		     x=['Predicted not spam', 'Predicted spam'],
 		     y=['Real not spam', 'Real spam'],
 		     colorscale='Blues')
-ax2 = go.Layout(title='Confusion Matrix')
+ax2 = go.Layout(title='Confusion Matrix',
+	       width=500, height=500)
 fig3 = go.Figure(data=[heatmap], layout=ax2)
 
 #---------------------------------------------
