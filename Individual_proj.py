@@ -176,8 +176,7 @@ def main():
 			st.write("spam emails represent 23.9% of total emails")
 		with col2:
 			st.pyplot(fig2) #matplotlib chart len distribution
-   			st.write("spam emails length distribution show that are shorter vs not spam emails")
-
+			st.write("spam emails length distribution show that are shorter vs not spam emails")
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
 		st.write('I love windows')
