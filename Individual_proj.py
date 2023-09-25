@@ -185,11 +185,11 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
 		with col1:
+			#st.pyplot(fig3) #seaborn chart
+			st.plotly_chart(fig3,use_container_width=True)
+		with col2:
 			st.dataframe(pd.DataFrame(cm))
 			st.write(f"Accuracy: {accuracy:.2f}%")
-		with col2:
-			#st.pyplot(fig3) #seaborn chart
-			st.plotly_chart(fig3)
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		with st.form(key='test_email'):
