@@ -171,10 +171,11 @@ def main():
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
 		st.markdown("""---""")
-		st.write('''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
+		st.markdown('''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
   			that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to 
-     			the recipients.''')
-		st.write('''According to Statista, nearly 49 percent of all emails worldwide were identified as spam in 2022. That 
+     			the recipients.
+			
+   			According to Statista, nearly 49 percent of all emails worldwide were identified as spam in 2022. That 
 			means that out of the 306.4 billion emails sent daily, about 150 billion were spam.''')
 		st.write('''Spam emails can have negative impacts on both businesses and customers. For businesses, spam emails can reduce 
    			productivity, increase costs, damage reputation, and expose them to legal risks. For customers, spam emails can invade 
