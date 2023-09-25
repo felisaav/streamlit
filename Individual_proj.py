@@ -171,7 +171,7 @@ def main():
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
 		st.markdown("""---""")
-		st.markdown('''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
+		st.write('''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
   			that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to 
      			the recipients.
 			
@@ -187,6 +187,8 @@ def main():
       			based on their content, sender, subject, and other features.''')
 		st.write('''Email spam classification can help users and organizations 
 	 		to protect themselves from the threats of spam and improve their email experience.''')
+		st.subheader("Naive Bayes")
+		st.markdown("""---""")
 		
 
 	elif choice == "Results":
