@@ -14,7 +14,6 @@ nltk.download('stopwords')
 from nltk.stem.porter import *
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
-#import sklearn
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
@@ -186,7 +185,7 @@ def main():
 		col1,col2 = st.columns(2)
 		with col1:
 			#st.pyplot(fig3) #seaborn chart
-			st.plotly_chart(fig3,use_container_width=True)
+			st.plotly_chart(fig3,use_container_width=True,use_container_height=True)
 		with col2:
 			st.dataframe(pd.DataFrame(cm))
 			st.write(f"Accuracy: {accuracy:.2f}%")
@@ -202,9 +201,9 @@ def main():
 			else:
 				st.write('Your message is a normal email')
 						
-	else:	
-		st.subheader("About Me")
-		st.write('yo amo windows')
+#	else:	
+#		st.subheader("About Me")
+#		st.write('yo amo windows')
 
 
 
