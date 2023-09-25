@@ -183,7 +183,7 @@ def main():
 		st.image('media/ML_spam.png')
 		st.write('''Therefore, it is important to develop effective methods to classify and filter spam emails from legitimate ones. Email 
    			spam classification is the process of using machine learning algorithms to automatically identify and label spam emails 
-      			based on their content, sender, subject, and other features.'''
+      			based on their content, sender, subject, and other features.''')
 		st.write('''Email spam classification can help users and organizations 
 	 		to protect themselves from the threats of spam and improve their email experience.''')
 		
