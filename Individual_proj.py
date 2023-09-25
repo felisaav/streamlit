@@ -95,7 +95,7 @@ custom_colors = ['blue', 'orange']
 fig1 = px.pie(df2,
              values='text',
              names='spam',
-             title='Distribution of spam/not spam emails',
+             #title='Distribution of spam/not spam emails',
              labels={'text':'# of cases'})
 fig1.update_traces(marker=dict(colors=custom_colors))
 
@@ -105,7 +105,7 @@ data[data['spam'] == 0]['length'].plot.hist(bins=50, alpha=0.5, color='blue',den
 data[data['spam'] == 1]['length'].plot.hist(bins=50, alpha=0.5, color='orange',density=True, label='spam = 1', ax=ax)
 ax.set_xlabel('Length')
 ax.set_ylabel('Frequency')
-ax.set_title('Distribution of Email Lengths')
+#ax.set_title('Distribution of Email Lengths')
 ax.legend()
 
 #3rd confusion matrix
@@ -133,13 +133,12 @@ fig3 = go.Figure(data=[heatmap], layout=ax2)
 #---------------------------
 def main():
 	st.title("Project - email spam analysis")
-	menu = ["Problem description","Descriptive Analysis","Predictive Model","Results","About Me"]
+	menu = ["Problem description","Descriptive Analysis","Predictive Model","Results"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Problem description":
 		st.subheader("Problem Description")
 		st.markdown("""---""")
-		# Columns/Layout
 		col1,col2 = st.columns(2)
 		with col1:
 			st.write("***Description***")
@@ -148,7 +147,6 @@ def main():
 			st.write("The objetive of this analysis is to show a review of the dataset, one possible way to solve \
 					this kind of problems and the main results")
 			st.write("Let's start!")
-		# Results Layouts
 		with col2:
 			st.write("***Original dataset***")
 			st.write("spam emails examples")
@@ -162,9 +160,11 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
 		with col1:
+			st.write("Distribution of spam/not spam emails")
 			st.plotly_chart(fig1,use_container_width=True) #plotly chart distribution
 			st.write("spam emails represent 23.9% of total emails")
 		with col2:
+			st.write("Distribution spam/not spam emails lenght")
 			st.pyplot(fig2) #matplotlib chart len distribution
 			st.write("spam emails length distribution show that are shorter vs not spam emails")
 	elif choice == "Predictive Model":
@@ -192,14 +192,6 @@ def main():
 				st.write('Your message is a spam')
 			else:
 				st.write('Your message is a normal email')
-						
-#	else:	
-#		st.subheader("About Me")
-#		st.write('yo amo windows')
-
-
-
-
 
 if __name__ == '__main__':
 	main()
