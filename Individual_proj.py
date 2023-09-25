@@ -125,15 +125,7 @@ heatmap = go.Heatmap(z=cm,
 ax2 = go.Layout(title='Confusion Matrix')
 fig3 = go.Figure(data=[heatmap], layout=ax2)
 
-#---------------------------------------------
-
-
-#@st.cache_data 
-#def plot_matrix(cm, classes):
-#    cm_df = pd.DataFrame(cm, index=classes, columns=classes)
-#    return cm_df
-
-	#distribution of email len (spam/not spam) emails
+#distribution of email len (spam/not spam) emails
 
 
 #---------------------------
