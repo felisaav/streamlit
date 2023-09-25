@@ -123,8 +123,7 @@ heatmap = go.Heatmap(z=cm,
 		     x=['Predicted not spam', 'Predicted spam'],
 		     y=['Real not spam', 'Real spam'],
 		     colorscale='Blues')
-ax2 = go.Layout(title='Confusion Matrix',
-	       use_container_width=True)
+ax2 = go.Layout(title='Confusion Matrix')
 fig3 = go.Figure(data=[heatmap], layout=ax2)
 
 #---------------------------------------------
@@ -172,7 +171,7 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
 		with col1:
-			st.plotly_chart(fig1) #plotly chart distribution
+			st.plotly_chart(fig1,use_container_width=True) #plotly chart distribution
 			st.write("spam emails represent 23.9% of total emails")
 		with col2:
 			st.pyplot(fig2) #matplotlib chart len distribution
