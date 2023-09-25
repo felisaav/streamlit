@@ -169,7 +169,7 @@ def main():
 			st.write("spam emails length distribution show that are shorter vs not spam emails")
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
-		st.write('I love windows')
+		st.image('images/ML_spam.png')
 
 	elif choice == "Results":
 		st.subheader("Results")
