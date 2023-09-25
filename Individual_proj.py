@@ -119,12 +119,10 @@ ax.legend()
 #---------------------------------------------
 # Create a heatmap using Plotly
 heatmap = go.Heatmap(z=cm,
-		     x=['Predicted 0', 'Predicted 1'],
-		     y=['Real 0', 'Real 1'],
+		     x=['Predicted not spam', 'Predicted spam'],
+		     y=['Real not spam', 'Real spam'],
 		     colorscale='Blues')
-
 layout = go.Layout(title='Confusion Matrix')
-
 fig3 = go.Figure(data=[heatmap], layout=layout)
 
 #---------------------------------------------
