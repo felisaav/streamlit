@@ -151,7 +151,6 @@ def main():
 		st.markdown("""---""")
 		# Columns/Layout
 		col1,col2 = st.columns(2)
-
 		with col1:
 			st.write("***Description***")
 			st.write("In this site we will review the analysis performed to a email.csv file.")
@@ -171,9 +170,13 @@ def main():
 	elif choice == "Descriptive Analysis":
 		st.subheader("Descriptive Analysis")
 		st.markdown("""---""")
-		st.plotly_chart(fig1) #plotly chart
-		st.markdown("""---""")
-		st.pyplot(fig2) #matplotlib chart
+		col1,col2 = st.columns(2)
+		with col1:
+			st.plotly_chart(fig1) #plotly chart distribution
+			st.write("spam emails represent 23.9% of total emails")
+		with col2:
+			st.pyplot(fig2) #matplotlib chart len distribution
+   			st.write("spam emails length distribution show that are shorter vs not spam emails")
 
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
