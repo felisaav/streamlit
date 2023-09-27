@@ -208,7 +208,7 @@ def main():
 			submit_code = st.form_submit_button("Execute")
 		if submit_code:
 			st.info("Query Result")
-			if predict_category(msg)[0]==1:
+			if model.predict(vectorizer.transform([msg]))[0]==1:#predict_category(msg)[0]==1:
 				st.write('Your message is a spam')
 			else:
 				st.write('Your message is a normal email')
