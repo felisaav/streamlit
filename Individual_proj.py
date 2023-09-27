@@ -163,6 +163,8 @@ def main():
 				this kind of problems and the main results''')
 
 		st.write('<p style="font-size:24px; color:blue;">Original Dataset</p>',unsafe_allow_html=True)
+		st.write("The original dataset contains **5,730 rows** with emails body and a classification if the email is a spam or not. \
+  			  Below you can see an example of the dataset")
 		col1,col2 = st.columns(2)
 		with col1:
 			st.write("spam emails examples")
