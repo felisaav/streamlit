@@ -145,28 +145,30 @@ def main():
 	if choice == "Problem description":
 		st.subheader("Problem Description")
 		st.markdown("""---""")
+		st.write("***Intro***")
 		st.write('''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
   			that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to 
      			the recipients.''')
-		st.write('''According to Statista, nearly *49%* of all emails worldwide were identified as spam in 2022. That 
-			means that out of the **306.4 billion** emails sent daily, about ***150 billion*** were spam.''')
+		st.write('''According to Statista, nearly **49%** of all emails worldwide were identified as **spam** in 2022. That 
+			means that out of the **306.4 billion** emails sent daily, about **150 billion were spam**.''')
 		st.write('''Spam emails can have negative impacts on both businesses and customers. For businesses, spam emails can reduce 
    			productivity, increase costs, damage reputation, and expose them to legal risks. For customers, spam emails can invade 
       			their privacy, waste their bandwidth, expose them to scams, phishing, malware, and ransomware, and harm the environment
 	 		by generating carbon emissions.''')
+		st.markdown("""---""")
+		st.write("***Description***")
+		st.write("In this site we will review the analysis performed to a email.csv file.")
+		st.write("The dataset contains different email texts with a classification if it is spam or not.")
+		st.write("The objetive of this analysis is to show a review of the dataset, one possible way to solve \
+				this kind of problems and the main results")
+		st.write("Let's start!")
+		st.markdown("""---""")
+		st.write("***Original dataset***")
 		col1,col2 = st.columns(2)
 		with col1:
-			st.write("***Description***")
-			st.write("In this site we will review the analysis performed to a email.csv file.")
-			st.write("The dataset contains different email texts with a classification if it is spam or not.")
-			st.write("The objetive of this analysis is to show a review of the dataset, one possible way to solve \
-					this kind of problems and the main results")
-			st.write("Let's start!")
-		with col2:
-			st.write("***Original dataset***")
 			st.write("spam emails examples")
 			st.dataframe(data.loc[data["spam"]==1]["text"].head())
-			st.markdown("---")
+		with col2:
 			st.write("not spam emails examples")
 			st.dataframe(data.loc[data["spam"]==0]["text"].head())
 
