@@ -158,13 +158,12 @@ def main():
 		
 		st.write('<p style="font-size:24px; color:blue;">Description</p>',unsafe_allow_html=True)
 		st.write('''In this site we will review the analysis performed to a email.csv file. \
-  			The dataset contains different email texts with a classification if it is spam or not.\
+  			The dataset contains **5,730 rows** with emails body and a classification if the email is a spam or not. \
      			The objetive of this analysis is to show a review of the dataset, one possible way to solve \
-				this kind of problems and the main results''')
+				this kind of problems and the main results. \
+    				Below you can see an example of the dataset:''')
 
 		st.write('<p style="font-size:24px; color:blue;">Original Dataset</p>',unsafe_allow_html=True)
-		st.write("The original dataset contains **5,730 rows** with emails body and a classification if the email is a spam or not. \
-  			  Below you can see an example of the dataset")
 		col1,col2 = st.columns(2)
 		with col1:
 			st.write("spam emails examples")
