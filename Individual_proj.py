@@ -79,7 +79,7 @@ cm = pd.DataFrame(confusion_matrix(Y_test, predictions))
 
 #calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
-precision = cm.iloc[1, 1]# / (cm.iloc[0, 1] + cm.iloc[1, 1])) #TP/Predicted positives
+precision = cm.iloc[0, 1]#/(cm.iloc[1, 1])# / (cm.iloc[0, 1] + cm.iloc[1, 1])) #TP/Predicted positives
 #specificity = 0 #TN/negatives(TN+FP)
 #Recall= 0 #TP/positives(TP+FN)
 
