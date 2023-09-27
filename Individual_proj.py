@@ -143,9 +143,10 @@ def main():
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Problem description":
+		#st.write('<p style="font-size:26px; color:red;">Here is some red text</p>',unsafe_allow_html=True)
 		st.subheader("Problem Description")
 		st.markdown("""---""")
-		st.write("***Intro***")
+		st.write('<p style="font-size:26px; color:red;">Intro</p>',unsafe_allow_html=True)
 		st.write('''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
   			that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to 
      			the recipients.''')
