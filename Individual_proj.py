@@ -202,7 +202,7 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns([3, 1])
 		with col1:
-			st.write("***Confusion Matrix***")
+			#st.write("***Confusion Matrix***")
 			st.plotly_chart(fig3,use_container_width=True,use_container_height=True)
 		with col2:
 			#st.dataframe(cm)
