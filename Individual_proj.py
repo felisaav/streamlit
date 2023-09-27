@@ -96,8 +96,9 @@ recall= cm.iloc[1, 1]/(cm.iloc[1, 1]+cm.iloc[1, 0])*100  #TP/positives(TP+FN)
 #------Create charts--------
 #---------------------------
 #1st pie chart with distribution
-'''
+
 df2=data.groupby('spam').count().reset_index().replace(0,"not spam").replace(1,"spam")
+'''
 custom_colors = ['blue', 'orange'] 
 fig1 = px.pie(df2,
              values='text',
@@ -106,15 +107,12 @@ fig1 = px.pie(df2,
              labels={'text':'# of cases'})
 fig1.update_traces(marker=dict(colors=custom_colors))
 '''
-fig1 = sns.histplot(
-    df2,
-    #x="price", hue="cut",
-    multiple="stack"#,
-    #palette="light:m_r",
-    #edgecolor=".3",
-    #linewidth=.5,
-    #log_scale=True,
-)
+fig1, ax1 = plt.subplots()
+sns.barplot(data=df2, x='spam', y='text', ax=ax1, palette=['blue', 'orange'])
+ax1.set_xlabel('Category')
+ax1.set_ylabel('# of Cases')
+ax1.set_title('Distribution of Spam and Not Spam Emails')
+plt.xticks([0, 1], ['Not Spam', 'Spam'])
 
 #2nd distribution of lenght of spam / not spam emails - matplotlib chart
 fig2, ax = plt.subplots()
