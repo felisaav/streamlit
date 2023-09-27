@@ -205,7 +205,7 @@ def main():
 			st.subheader("Confusion Matrix")
 			st.plotly_chart(fig3,use_container_width=True,use_container_height=True)
 		with col2:
-			#st.dataframe(cm)
+			st.dataframe(cm)
 			st.subheader("Main metrics")
 			st.write(f"Accuracy: {accuracy:.2f}%")
 			st.write(f"Precision: {precision:.2f}%")
