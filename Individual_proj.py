@@ -200,16 +200,18 @@ def main():
 	elif choice == "Results":
 		st.subheader("Results")
 		st.markdown("""---""")
-		col1,col2 = st.columns(2)
+		col1,col2 = st.columns([3, 1])
 		with col1:
+			st.subheader("Confusion Matrix")
 			#st.pyplot(fig3) #seaborn chart
 			st.plotly_chart(fig3,use_container_width=True,use_container_height=True)
 		with col2:
-			st.dataframe(cm)
+			#st.dataframe(cm)
+			st.subheader("Main metrics")
 			st.write(f"Accuracy: {accuracy:.2f}%")
 			st.write(f"Precision: {precision:.2f}%")
-			#st.write(f"Specificity: {specificity:.2f}%")
-			#st.write(f"Recall: {recall:.2f}%")
+			st.write(f"Specificity: {specificity:.2f}%")
+			st.write(f"Recall: {recall:.2f}%")
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		with st.form(key='test_email'):
