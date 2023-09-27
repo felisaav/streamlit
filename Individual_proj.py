@@ -81,8 +81,8 @@ precision=0 #TP/Predicted positives
 specificity =0 #TN/negatives(TN+FP)
 Recall= 0#TP/positives(TP+FN)
 
-cm = confusion_matrix(Y_test, predictions)
-class_report=pd.DataFrame(classification_report(Y_test, predictions))
+cm = pd.DataFrame(confusion_matrix(Y_test, predictions))
+#class_report=pd.DataFrame(classification_report(Y_test, predictions))
 
 #function predict spam/not spam emails
 #@st.cache_data 
@@ -203,7 +203,7 @@ def main():
 			#st.pyplot(fig3) #seaborn chart
 			st.plotly_chart(fig3,use_container_width=True,use_container_height=True)
 		with col2:
-			st.dataframe(pd.DataFrame(cm))
+			st.dataframe(cm)
 			st.write(f"Accuracy: {accuracy:.2f}%")
 			st.write(class_report)
 		st.markdown("""---""")
