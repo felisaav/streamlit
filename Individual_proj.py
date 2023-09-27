@@ -17,7 +17,7 @@ from nltk.corpus import stopwords
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics import confusion_matrix, accuracy_score
+from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
 
 #------------------------------
 #----------functions-----------
@@ -55,7 +55,6 @@ def transform(df):
 #---train naive bayes model---
 @st.cache_data
 def train_model(X_train, Y_train):
-	#vectorizing 
 	vectorizer = CountVectorizer(ngram_range=(1, 2)).fit(X_train)
 	X_train_vectorized = vectorizer.transform(X_train)
 	#train naive bayes model
@@ -79,12 +78,13 @@ predictions = model.predict(vectorizer.transform(X_test))
 #calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
 cm = confusion_matrix(Y_test, predictions)
+class_report=classification_report(Y_test, predictions)
 
 #function predict spam/not spam emails
-@st.cache_data 
-def predict_category(s, model=model):
-    pred = model.predict(vectorizer.transform([s]))
-    return pred
+#@st.cache_data 
+#def predict_category(s, model=model):
+#    pred = model.predict(vectorizer.transform([s]))
+#    return pred
 	
 #---------------------------
 #------Create charts--------
@@ -201,6 +201,7 @@ def main():
 		with col2:
 			st.dataframe(pd.DataFrame(cm))
 			st.write(f"Accuracy: {accuracy:.2f}%")
+			st.write(class_report)
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		with st.form(key='test_email'):
