@@ -202,11 +202,11 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns([3, 1])
 		with col1:
-			#st.subheader("Confusion Matrix")
+			st.write("***Confusion Matrix***")
 			st.plotly_chart(fig3,use_container_width=True,use_container_height=True)
 		with col2:
 			#st.dataframe(cm)
-			st.subheader("Main metrics")
+			st.write("***Main metrics***")
 			st.write(f"Accuracy: {accuracy:.2f}%")
 			st.write(f"Precision: {precision:.2f}%")
 			st.write(f"Specificity: {specificity:.2f}%")
