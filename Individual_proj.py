@@ -77,9 +77,9 @@ predictions = model.predict(vectorizer.transform(X_test))
 
 #calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
-precision=100*sum(cm.loc[1,'1']/(cm.loc[0,'1']+cm.loc[1,'1']) #TP/Predicted positives
-specificity =0 #TN/negatives(TN+FP)
-Recall= 0#TP/positives(TP+FN)
+precision = 100*sum(cm.loc[1,'1']/(cm.loc[0,'1']+cm.loc[1,'1']) #TP/Predicted positives
+specificity = 0 #TN/negatives(TN+FP)
+Recall= 0 #TP/positives(TP+FN)
 
 cm = pd.DataFrame(confusion_matrix(Y_test, predictions))
 #class_report=pd.DataFrame(classification_report(Y_test, predictions))
