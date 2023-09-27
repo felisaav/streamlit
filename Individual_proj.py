@@ -128,8 +128,8 @@ heatmap = go.Heatmap(z=cm,
 		     x=['Predicted not spam', 'Predicted spam'],
 		     y=['Real not spam', 'Real spam'],
 		     colorscale='Blues')
-#ax2 = go.Layout(title='Confusion Matrix')
-fig3 = go.Figure(data=[heatmap])#, layout=ax2)
+ax2 = go.Layout(title='Confusion Matrix')
+fig3 = go.Figure(data=[heatmap], layout=ax2)
 
 #distribution of email len (spam/not spam) emails
 
@@ -202,7 +202,7 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns([3, 1])
 		with col1:
-			st.subheader("Confusion Matrix")
+			#st.subheader("Confusion Matrix")
 			st.plotly_chart(fig3,use_container_width=True,use_container_height=True)
 		with col2:
 			#st.dataframe(cm)
