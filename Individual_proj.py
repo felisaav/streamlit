@@ -77,7 +77,7 @@ predictions = model.predict(vectorizer.transform(X_test))
 
 #calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
-precision=0 #TP/Predicted positives
+precision=100*sum(cm.loc[1,'1']/(cm.loc[0,'1']+cm.loc[1,'1']) #TP/Predicted positives
 specificity =0 #TN/negatives(TN+FP)
 Recall= 0#TP/positives(TP+FN)
 
@@ -205,7 +205,9 @@ def main():
 		with col2:
 			st.dataframe(cm)
 			st.write(f"Accuracy: {accuracy:.2f}%")
-			st.write(class_report)
+			st.write(f"Precision: {precision:.2f}%")
+			st.write(f"Specificity: {specificity:.2f}%")
+			st.write(f"Recall: {recall:.2f}%")
 		st.markdown("""---""")
 		st.subheader("Test a new email and see if it is a spam or not")
 		with st.form(key='test_email'):
