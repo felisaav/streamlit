@@ -129,7 +129,7 @@ heatmap = go.Heatmap(z=cm,
 		     y=['Real not spam', 'Real spam'],
 		     colorscale='Blues')
 #ax2 = go.Layout(title='Confusion Matrix')
-fig3 = go.Figure(data=[heatmap], layout=ax2)
+fig3 = go.Figure(data=[heatmap])#, layout=ax2)
 
 #distribution of email len (spam/not spam) emails
 
