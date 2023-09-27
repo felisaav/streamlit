@@ -143,7 +143,7 @@ def main():
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Problem description":
-		#st.write('<p style="font-size:26px; color:red;">Here is some red text</p>',unsafe_allow_html=True)
+		#st.write('<p style="font-size:26px; color:blue;">Here is some red text</p>',unsafe_allow_html=True)
 		st.subheader("Problem Description")
 		st.markdown("""---""")
 		st.write('<p style="font-size:26px; color:red;">Intro</p>',unsafe_allow_html=True)
