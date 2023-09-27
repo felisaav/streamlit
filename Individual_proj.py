@@ -96,6 +96,7 @@ recall= cm.iloc[1, 1]/(cm.iloc[1, 1]+cm.iloc[1, 0])*100  #TP/positives(TP+FN)
 #------Create charts--------
 #---------------------------
 #1st pie chart with distribution
+'''
 df2=data.groupby('spam').count().reset_index().replace(0,"not spam").replace(1,"spam")
 custom_colors = ['blue', 'orange'] 
 fig1 = px.pie(df2,
@@ -104,8 +105,18 @@ fig1 = px.pie(df2,
              #title='Distribution of spam/not spam emails',
              labels={'text':'# of cases'})
 fig1.update_traces(marker=dict(colors=custom_colors))
+'''
+fig1 = sns.histplot(
+    df2,
+    #x="price", hue="cut",
+    multiple="stack"#,
+    #palette="light:m_r",
+    #edgecolor=".3",
+    #linewidth=.5,
+    #log_scale=True,
+)
 
-#2nd distribution of lenght of spam / not spam emails
+#2nd distribution of lenght of spam / not spam emails - matplotlib chart
 fig2, ax = plt.subplots()
 data[data['spam'] == 0]['length'].plot.hist(bins=50, alpha=0.5, color='blue',density=True, label='spam = 0', ax=ax)
 data[data['spam'] == 1]['length'].plot.hist(bins=50, alpha=0.5, color='orange',density=True, label='spam = 1', ax=ax)
@@ -114,15 +125,7 @@ ax.set_ylabel('Frequency')
 #ax.set_title('Distribution of Email Lengths')
 ax.legend()
 
-#3rd confusion matrix
-#fig3, ax2 = plt.subplots()
-#sns.heatmap(cm, annot=True, fmt="d")#, cmap='Blues', ax=ax2)#
-#ax2.set_title('Confusion Matrix')
-#ax2.set_xlabel('Predicted')
-#ax2.set_ylabel('Real')
-
-#---------------------------------------------
-# Create a heatmap using Plotly
+# Create a heatmap confusion matrix with results  - plotly chart
 fig3, ax2 = plt.subplots()
 heatmap = go.Heatmap(z=cm,
 		     x=['Predicted not spam', 'Predicted spam'],
@@ -220,7 +223,7 @@ def main():
 			submit_code = st.form_submit_button("Execute")
 		if submit_code:
 			st.info("Query Result")
-			if model.predict(vectorizer.transform([msg]))[0]==1:#predict_category(msg)[0]==1:
+			if model.predict(vectorizer.transform([msg]))[0]==1:
 				st.write('Your message is a spam')
 			else:
 				st.write('Your message is a normal email')
