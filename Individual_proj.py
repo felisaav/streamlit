@@ -77,8 +77,12 @@ predictions = model.predict(vectorizer.transform(X_test))
 
 #calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
+precision=0 #TP/Predicted positives
+specificity =0 #TN/negatives(TN+FP)
+Recall= 0#TP/positives(TP+FN)
+
 cm = confusion_matrix(Y_test, predictions)
-class_report=classification_report(Y_test, predictions)
+class_report=pd.DataFrame(classification_report(Y_test, predictions))
 
 #function predict spam/not spam emails
 #@st.cache_data 
