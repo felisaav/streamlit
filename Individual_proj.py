@@ -143,7 +143,6 @@ def main():
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Problem description":
-		#st.write('<p style="font-size:24px; color:blue;">Here is some red text</p>',unsafe_allow_html=True)
 		st.subheader("Problem Description")
 		st.markdown("""---""")
 		st.write('<p style="font-size:24px; color:blue;">Intro</p>',unsafe_allow_html=True)
@@ -157,11 +156,11 @@ def main():
       			their privacy, waste their bandwidth, expose them to scams, phishing, malware, and ransomware, and harm the environment
 	 		by generating carbon emissions.''')
 		
-		st.write("***Description***")
-		st.write("In this site we will review the analysis performed to a email.csv file.")
-		st.write("The dataset contains different email texts with a classification if it is spam or not.")
-		st.write("The objetive of this analysis is to show a review of the dataset, one possible way to solve \
-				this kind of problems and the main results")
+		st.write('<p style="font-size:24px; color:blue;">Description</p>',unsafe_allow_html=True)
+		st.write('''In this site we will review the analysis performed to a email.csv file. \
+  			The dataset contains different email texts with a classification if it is spam or not.\
+     			The objetive of this analysis is to show a review of the dataset, one possible way to solve \
+				this kind of problems and the main results''')
 
 		st.write("***Original dataset***")
 		col1,col2 = st.columns(2)
