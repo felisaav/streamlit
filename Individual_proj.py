@@ -133,8 +133,8 @@ fig3 = go.Figure(data=[heatmap], layout=ax2)
 
 #distribution of email len (spam/not spam) emails
 
-text1='''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
-  		that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to the recipients.'''
+#text1='''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
+#  		that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to the recipients.'''
 #---------------------------
 #--Configuration of pages---
 #---------------------------
@@ -147,7 +147,11 @@ def main():
 		st.subheader("Problem Description")
 		st.markdown("""---""")
 		
-		st.markdown('<div style="text-align: justify;">text1</div>', unsafe_allow_html=True)
+		st.markdown('<div style="text-align: justify;">
+  				Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
+  		that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to the recipients.
+      			     </div>',
+	      		     unsafe_allow_html=True)
 		#st.write('''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
   		#	that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to 
      		#	the recipients.''')
