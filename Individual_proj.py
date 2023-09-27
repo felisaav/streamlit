@@ -162,7 +162,7 @@ def main():
      			The objetive of this analysis is to show a review of the dataset, one possible way to solve \
 				this kind of problems and the main results''')
 
-		st.write("***Original dataset***")
+		st.write('<p style="font-size:24px; color:blue;">Original Dataset</p>',unsafe_allow_html=True)
 		col1,col2 = st.columns(2)
 		with col1:
 			st.write("spam emails examples")
