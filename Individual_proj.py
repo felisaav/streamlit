@@ -145,9 +145,9 @@ def main():
 	if choice == "Problem description":
 		st.subheader("Problem Description")
 		st.markdown("""---""")
-		st.markdown('<div style="text-align: center;">Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
-  			that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to 
-     			the recipients.</div>', unsafe_allow_html=True)
+		text1='''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
+  		that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to the recipients.'''
+		st.markdown('<div style="text-align: center;">text1</div>', unsafe_allow_html=True)
 		#st.write('''Email spam is a serious problem that affects millions of Internet users every day. Spam emails are unsolicited messages 
   		#	that are sent in bulk, usually for commercial purposes. They can be annoying, time-consuming, and potentially harmful to 
      		#	the recipients.''')
