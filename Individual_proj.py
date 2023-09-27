@@ -108,7 +108,7 @@ fig1 = px.pie(df2,
 fig1.update_traces(marker=dict(colors=custom_colors))
 '''
 fig1, ax1 = plt.subplots()
-sns.barplot(data=df2, x='spam', y='text', ax=ax1, palette=['blue', 'orange'])
+sns.barplot(data=df2, x='spam', y='text', ax=ax1, hue="spam", palette=['blue', 'orange'])
 ax1.set_xlabel('Category')
 ax1.set_ylabel('# of Cases')
 ax1.set_title('Distribution of Spam and Not Spam Emails')
