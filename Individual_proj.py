@@ -115,9 +115,7 @@ ax1.set_title('Distribution of Spam and Not Spam Emails')
 plt.xticks([0, 1], ['Not Spam', 'Spam'])
 '''
 fig1, ax1 = plt.subplots()
-sns.barplot(data=df2,
-	    y='text',
-	    color='spam')
+sns.histplot(data=df2,x='text',hue='spam')
 
 #2nd distribution of lenght of spam / not spam emails - matplotlib chart
 fig2, ax = plt.subplots()
