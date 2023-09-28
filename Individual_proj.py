@@ -212,7 +212,7 @@ def main():
 			natural language processing (NLP) problems.''')
 		st.write('''Bayes’ Theorem describes the probability of an event, based on a prior knowledge of conditions that might be related to that event.''')
 		st.latex(r'''
-  			P(H/E)=frac{P(E/H)*P(H)}{P(E)}
+  			P(H/E)=\frac{P(E/H)*P(H)}{P(E)}
      			''')
 		st.markdown("""---""")	
 
