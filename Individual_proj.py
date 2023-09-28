@@ -75,22 +75,14 @@ model, vectorizer=train_model(X_train, Y_train)
 
 predictions = model.predict(vectorizer.transform(X_test))
 
+#calculate performance metrics
 cm = pd.DataFrame(confusion_matrix(Y_test, predictions))
-
-#calculate accuracy of the model
 accuracy=100 * sum(predictions == Y_test) / len(predictions)
 precision = cm.iloc[1, 1]/(cm.iloc[0, 1]+cm.iloc[1, 1])*100# / (cm.iloc[0, 1] + cm.iloc[1, 1])) #TP/Predicted positives
 specificity = cm.iloc[0, 0]/(cm.iloc[0, 1]+cm.iloc[0, 0])*100 #TN/negatives(TN+FP)
 recall= cm.iloc[1, 1]/(cm.iloc[1, 1]+cm.iloc[1, 0])*100  #TP/positives(TP+FN)
 
-
 #class_report=pd.DataFrame(classification_report(Y_test, predictions))
-
-#function predict spam/not spam emails
-#@st.cache_data 
-#def predict_category(s, model=model):
-#    pred = model.predict(vectorizer.transform([s]))
-#    return pred
 	
 #---------------------------
 #------Create charts--------
@@ -115,7 +107,8 @@ ax1.set_title('Distribution of Spam and Not Spam Emails')
 plt.xticks([0, 1], ['Not Spam', 'Spam'])
 '''
 fig1, ax1 = plt.subplots()
-sns.countplot(data=df2,hue='spam')
+#sns.countplot(data=df2,hue='spam')
+plt.pie(df2, labels='spam', autopct='%.0f%%')
 
 #2nd distribution of lenght of spam / not spam emails - matplotlib chart
 fig2, ax = plt.subplots()
