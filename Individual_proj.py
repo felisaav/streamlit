@@ -182,7 +182,6 @@ def main():
 		with col1:
 			st.write("***Distribution of spam/not spam emails***")
 			st.pyplot(fig1) #matplotlib piechart
-			st.write(spam_words.head())
 		with col2:
 			st.write("***Distribution spam/not spam emails lenght***")
 			st.pyplot(fig2) #matplotlib chart len distribution
@@ -191,10 +190,10 @@ def main():
 		col3,col4 = st.columns(2)
 		with col3:
 			st.write("***10 most freq words in spam emails***")
-			st.pyplot(fig4)
+			st.pyplot(fig4) #seaborn chart most freq words
 		with col4:
 			st.write("***10 most freq words in not spam emails***")
-			st.pyplot(fig5)
+			st.pyplot(fig5) #seaborn chart most freq words
 	
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
