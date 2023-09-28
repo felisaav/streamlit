@@ -76,7 +76,7 @@ def word_counter(df):
 	
 	# Sort the DataFrame by frequency in descending order
 	word_freq_df = word_freq_df.sort_values(by='Frequency', ascending=False)
-	
+	word_freq_df = word_freq_df.reset_index()
 	# Display the DataFrame with word frequencies
 	return(word_freq_df)
 
@@ -129,8 +129,12 @@ ax2 = go.Layout(title='Confusion Matrix')
 fig3 = go.Figure(data=[heatmap], layout=ax2)
 
 #more frequent words in spam/not spam emails
-spam_words=word_counter(data.loc[data['spam']==1])
+spam_words=word_counter(data.loc[data['spam']==1]).head(10)
+fig4,ax3 = plt.subplots()
+sns.barplot(data=spam_words, x="index", y="Frequency",ax=ax3)
 
+
+not_spam_words=word_counter(data.loc[data['spam']==0])
 #---------------------------
 #--Configuration of pages---
 #---------------------------
@@ -170,7 +174,6 @@ def main():
 			st.dataframe(data.loc[data["spam"]==0]["text"].head())
 
 	elif choice == "Descriptive Analysis":
-		st.write(data.head())
 		st.subheader("Descriptive Analysis")
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
@@ -182,6 +185,14 @@ def main():
 			st.write("***Distribution spam/not spam emails lenght***")
 			st.pyplot(fig2) #matplotlib chart len distribution
 			st.write("spam emails length distribution show that are shorter vs not spam emails")
+		
+		col3,col4 = st.columns(2)
+		with col3:
+			st.write("***10 most freq words in spam emails***")
+			st.write(fig4)
+		with col4:
+			st.write("***10 most freq words in not spam emails***")
+			st.write(not_spam_words.head())
 	
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
