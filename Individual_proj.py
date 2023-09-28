@@ -64,7 +64,7 @@ def train_model(X_train, Y_train):
 	return model, vectorizer
 
 @st.cache_data
-def word_counter(df)
+def word_counter(df):
 	# Tokenize and count word frequencies
 	word_freq = Counter()
 	for text in df['tokens']:
