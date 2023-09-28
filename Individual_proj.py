@@ -131,10 +131,12 @@ fig3 = go.Figure(data=[heatmap], layout=ax2)
 #more frequent words in spam/not spam emails
 spam_words=word_counter(data.loc[data['spam']==1]).head(10)
 fig4,ax3 = plt.subplots()
-sns.barplot(data=spam_words, y="index", x="Frequency",ax=ax3)
+sns.barplot(data=spam_words, y="index", x="Frequency",ax=ax3, color='orange')
 
+not_spam_words=word_counter(data.loc[data['spam']==0]).head(10)
+fig5,ax4 = plt.subplots()
+sns.barplot(data=not_spam_words, y="index", x="Frequency",ax=ax4, color='blue')
 
-not_spam_words=word_counter(data.loc[data['spam']==0])
 #---------------------------
 #--Configuration of pages---
 #---------------------------
@@ -189,10 +191,10 @@ def main():
 		col3,col4 = st.columns(2)
 		with col3:
 			st.write("***10 most freq words in spam emails***")
-			st.write(fig4)
+			st.pyplot(fig4)
 		with col4:
 			st.write("***10 most freq words in not spam emails***")
-			st.write(not_spam_words.head())
+			st.pyplot(fig5)
 	
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
