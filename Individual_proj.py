@@ -45,10 +45,10 @@ def transform(df):
 
 	#Stemming
 	stemmer = PorterStemmer()
-	df['tokens'] = df['tokens'].apply(lambda x: [stemmer.stem(item) for item in x])
+	df['tokens_lst'] = df['tokens'].apply(lambda x: [stemmer.stem(item) for item in x])
 
 	#Unify the strings once again
-	df['tokens'] = df['tokens'].apply(lambda x: ' '.join(x))
+	df['tokens'] = df['tokens_lst'].apply(lambda x: ' '.join(x))
 	
 	return df
 	
@@ -151,6 +151,7 @@ def main():
 			st.dataframe(data.loc[data["spam"]==0]["text"].head())
 
 	elif choice == "Descriptive Analysis":
+		st.write(df.head())
 		st.subheader("Descriptive Analysis")
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
