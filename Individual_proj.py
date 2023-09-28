@@ -93,7 +93,7 @@ df2=data.groupby('spam').count().reset_index().replace(0,"not spam").replace(1,"
 
 fig1, ax1 = plt.subplots()
 #sns.countplot(data=df2,hue='spam')
-plt.pie(df2, labels='spam', autopct='%.0f%%')
+#plt.pie(df2, labels='spam', autopct='%.0f%%')
 sns.barplot(data=df2, x='spam', y='text', ax=ax1, hue="spam", palette=['blue', 'orange'])
 ax1.set_xlabel('Category')
 ax1.set_ylabel('# of Cases')
