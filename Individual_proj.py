@@ -200,12 +200,20 @@ def main():
 		st.markdown("""---""")
 
 		st.image('media/ML_spam.png')
-		st.write('''Therefore, it is important to develop effective methods to classify and filter spam emails from legitimate ones. Email 
+		st.write('''It is important to develop effective methods to classify and filter spam emails from legitimate ones. Email 
    			spam classification is the process of using machine learning algorithms to automatically identify and label spam emails 
       			based on their content, sender, subject, and other features.''')
 		st.write('''Email spam classification can help users and organizations 
 	 		to protect themselves from the threats of spam and improve their email experience.''')
 		st.subheader("Naive Bayes")
+		st.write('''Naive Bayes is a classification technique that is based on Bayes’ Theorem with an assumption that all the features \
+  			that predicts the target value are independent of each other. It calculates the probability of each class and then pick \
+     			the one with the highest probability. It has been successfully used for many purposes, but it works particularly well with \
+			natural language processing (NLP) problems.''')
+		st.write('''Bayes’ Theorem describes the probability of an event, based on a prior knowledge of conditions that might be related to that event.''')
+		st.latex(r'''
+  			P(H/E)=P(E/H)*P(H)/P(E)
+     			''')
 		st.markdown("""---""")	
 
 	elif choice == "Results":
@@ -223,7 +231,7 @@ def main():
 			st.write(f"Specificity: {specificity:.2f}%")
 			st.write(f"Recall: {recall:.2f}%")
 		st.markdown("""---""")
-		st.subheader("Test a new email and see if it is a spam or not")
+		st.subheader("Test your email content and see if it is a spam or not")
 		with st.form(key='test_email'):
 			msg =st.text_area("write your email here")
 			submit_code = st.form_submit_button("Execute")
