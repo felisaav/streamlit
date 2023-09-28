@@ -92,12 +92,7 @@ recall= cm.iloc[1, 1]/(cm.iloc[1, 1]+cm.iloc[1, 0])*100  #TP/positives(TP+FN)
 df2=data.groupby('spam').count().reset_index().replace(0,"not spam").replace(1,"spam")
 
 fig1, ax1 = plt.subplots()
-#df2[
-sns.barplot(data=df2,  y='text',x='spam', ax=ax1, hue="spam", palette=['blue', 'orange']) #
-ax1.set_xlabel('Category')
-ax1.set_ylabel('# of Cases')
-ax1.set_title('Distribution of Spam and Not Spam Emails')
-plt.xticks([0, 1], ['Not Spam', 'Spam'])
+ax1.pie(df['text'], labels=df['spam'], autopct='%1.1f%%', startangle=90)
 
 #2nd distribution of lenght of spam / not spam emails - matplotlib chart
 fig2, ax = plt.subplots()
