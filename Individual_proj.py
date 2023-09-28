@@ -151,7 +151,7 @@ def main():
 			st.dataframe(data.loc[data["spam"]==0]["text"].head())
 
 	elif choice == "Descriptive Analysis":
-		st.write(df.head())
+		st.write(data.head())
 		st.subheader("Descriptive Analysis")
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
