@@ -12,12 +12,13 @@ import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
 from nltk.stem.porter import *
-from nltk.tokenize import RegexpTokenizer
+from nltk.tokenize import RegexpTokenizer,word_tokenize
 from nltk.corpus import stopwords
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
+from collections import Counter
 
 #------------------------------
 #----------functions-----------
@@ -61,6 +62,24 @@ def train_model(X_train, Y_train):
 	model = MultinomialNB(alpha=0.1)
 	model.fit(X_train_vectorized, Y_train)
 	return model, vectorizer
+
+@st.cache_data
+def word_counter(df)
+	# Tokenize and count word frequencies
+	word_freq = Counter()
+	for text in df['tokens']:
+	    tokens = word_tokenize(text)
+	    word_freq.update(tokens)
+	
+	# Convert the word frequencies to a DataFrame
+	word_freq_df = pd.DataFrame.from_dict(word_freq, orient='index', columns=['Frequency'])
+	
+	# Sort the DataFrame by frequency in descending order
+	word_freq_df = word_freq_df.sort_values(by='Frequency', ascending=False)
+	
+	# Display the DataFrame with word frequencies
+	return(word_freq_df)
+
 
 #------------------------------
 #---------run the code---------
@@ -110,7 +129,7 @@ ax2 = go.Layout(title='Confusion Matrix')
 fig3 = go.Figure(data=[heatmap], layout=ax2)
 
 #more frequent words in spam/not spam emails
-
+spam_words=word_counter(data.loc[data['spam']==1])
 
 #---------------------------
 #--Configuration of pages---
@@ -158,7 +177,7 @@ def main():
 		with col1:
 			st.write("***Distribution of spam/not spam emails***")
 			st.pyplot(fig1) #matplotlib piechart
-			st.write("spam emails represent 23.9% of total emails")
+			st.write(spam_words.head())
 		with col2:
 			st.write("***Distribution spam/not spam emails lenght***")
 			st.pyplot(fig2) #matplotlib chart len distribution
