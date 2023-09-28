@@ -131,7 +131,7 @@ fig3 = go.Figure(data=[heatmap], layout=ax2)
 #more frequent words in spam/not spam emails
 spam_words=word_counter(data.loc[data['spam']==1]).head(10)
 fig4,ax3 = plt.subplots()
-sns.barplot(data=spam_words, x="index", y="Frequency",ax=ax3)
+sns.barplot(data=spam_words, y="index", x="Frequency",ax=ax3)
 
 
 not_spam_words=word_counter(data.loc[data['spam']==0])
