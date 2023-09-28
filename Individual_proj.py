@@ -114,6 +114,10 @@ ax1.set_ylabel('# of Cases')
 ax1.set_title('Distribution of Spam and Not Spam Emails')
 plt.xticks([0, 1], ['Not Spam', 'Spam'])
 '''
+fig1, ax1 = plt.subplots()
+sns.barplot(data=df2,
+	    y='text'
+	    color='spam')
 
 #2nd distribution of lenght of spam / not spam emails - matplotlib chart
 fig2, ax = plt.subplots()
@@ -181,6 +185,7 @@ def main():
 		with col1:
 			st.write("Distribution of spam/not spam emails")
 			st.write(df2)
+			st.pyplot(fig1)
 			#st.plotly_chart(fig1,use_container_width=True) #plotly chart distribution
 			st.write("spam emails represent 23.9% of total emails")
 		with col2:
