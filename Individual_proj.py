@@ -214,7 +214,11 @@ def main():
 		st.latex(r'''
   			P(H/E)=\frac{P(E/H)*P(H)}{P(E)}
      			''')
-		st.markdown("""---""")	
+		st.subheader("What makes Naive Bayes a ***Naive*** algorithm?")
+		st.write('''Naive Bayes classifier assumes that the features we use to predict the target are independent and do not affect each other. \
+  			While in real-life data, features depend on each other in determining the target, but this is ignored by the Naive Bayes classifier.\
+     			Though the independence assumption is never correct in real-world data, but often works well in practice. so that it is called ***Naive***.
+  			''')
 
 	elif choice == "Results":
 		st.subheader("Results")
