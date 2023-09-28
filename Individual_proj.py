@@ -92,7 +92,7 @@ recall= cm.iloc[1, 1]/(cm.iloc[1, 1]+cm.iloc[1, 0])*100  #TP/positives(TP+FN)
 df2=data.groupby('spam').count().reset_index().replace(0,"not spam").replace(1,"spam")
 
 fig1, ax1 = plt.subplots()
-ax1.pie(df['text'], labels=df['spam'], autopct='%1.1f%%', startangle=90)
+ax1.pie(df2['text'], labels=df2['spam'], autopct='%1.1f%%', startangle=90)
 
 #2nd distribution of lenght of spam / not spam emails - matplotlib chart
 fig2, ax = plt.subplots()
