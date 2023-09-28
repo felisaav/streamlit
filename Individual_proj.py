@@ -65,14 +65,15 @@ def train_model(X_train, Y_train):
 #------------------------------
 #---------run the code---------
 #------------------------------
+#load data
 data = load_data('emails.csv')
 data=transform(data)
 
 #create train/test split
 X_train, X_test, Y_train, Y_test = train_test_split(data['tokens'],data['spam'],test_size= 0.2,random_state=0)
 
+#train & predict
 model, vectorizer=train_model(X_train, Y_train)
-
 predictions = model.predict(vectorizer.transform(X_test))
 
 #calculate performance metrics
@@ -81,20 +82,16 @@ accuracy=100 * sum(predictions == Y_test) / len(predictions)
 precision = cm.iloc[1, 1]/(cm.iloc[0, 1]+cm.iloc[1, 1])*100# / (cm.iloc[0, 1] + cm.iloc[1, 1])) #TP/Predicted positives
 specificity = cm.iloc[0, 0]/(cm.iloc[0, 1]+cm.iloc[0, 0])*100 #TN/negatives(TN+FP)
 recall= cm.iloc[1, 1]/(cm.iloc[1, 1]+cm.iloc[1, 0])*100  #TP/positives(TP+FN)
-
-#class_report=pd.DataFrame(classification_report(Y_test, predictions))
 	
 #---------------------------
 #------Create charts--------
 #---------------------------
-#1st pie chart with distribution
-
+#pie chart with distribution - matplotlib chart
 df2=data.groupby('spam').count().reset_index().replace(0,"not spam").replace(1,"spam")
-
 fig1, ax1 = plt.subplots()
 ax1.pie(df2['text'], labels=df2['spam'], autopct='%1.1f%%', startangle=90)
 
-#2nd distribution of lenght of spam / not spam emails - matplotlib chart
+#distribution of lenght of spam / not spam emails - matplotlib chart
 fig2, ax = plt.subplots()
 data[data['spam'] == 0]['length'].plot.hist(bins=50, alpha=0.5, color='blue',density=True, label='spam = 0', ax=ax)
 data[data['spam'] == 1]['length'].plot.hist(bins=50, alpha=0.5, color='orange',density=True, label='spam = 1', ax=ax)
@@ -103,7 +100,7 @@ ax.set_ylabel('Frequency')
 #ax.set_title('Distribution of Email Lengths')
 ax.legend()
 
-# Create a heatmap confusion matrix with results  - plotly chart
+#heatmap confusion matrix with results  - plotly chart
 fig3, ax2 = plt.subplots()
 heatmap = go.Heatmap(z=cm,
 		     x=['Predicted not spam', 'Predicted spam'],
@@ -112,7 +109,7 @@ heatmap = go.Heatmap(z=cm,
 ax2 = go.Layout(title='Confusion Matrix')
 fig3 = go.Figure(data=[heatmap], layout=ax2)
 
-#distribution of email len (spam/not spam) emails
+#more frequent words in spam/not spam emails
 
 
 #---------------------------
@@ -158,13 +155,11 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
 		with col1:
-			st.write("Distribution of spam/not spam emails")
-			st.write(df2[["spam","text"]])
-			st.pyplot(fig1)
-			#st.plotly_chart(fig1,use_container_width=True) #plotly chart distribution
+			st.write("***Distribution of spam/not spam emails***")
+			st.pyplot(fig1) #matplotlib piechart
 			st.write("spam emails represent 23.9% of total emails")
 		with col2:
-			st.write("Distribution spam/not spam emails lenght")
+			st.write("***Distribution spam/not spam emails lenght***")
 			st.pyplot(fig2) #matplotlib chart len distribution
 			st.write("spam emails length distribution show that are shorter vs not spam emails")
 	
@@ -179,8 +174,7 @@ def main():
 		st.write('''Email spam classification can help users and organizations 
 	 		to protect themselves from the threats of spam and improve their email experience.''')
 		st.subheader("Naive Bayes")
-		st.markdown("""---""")
-		
+		st.markdown("""---""")	
 
 	elif choice == "Results":
 		st.subheader("Results")
