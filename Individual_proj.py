@@ -220,7 +220,7 @@ def main():
      			Though the independence assumption is never correct in real-world data, but often works well in practice. so that it is called ***Naive***.
   			''')
 		st.write('''This is a simple and really important concept, let's see why''')
-		st.write("In this specific example spam classification model
+		st.write("In this specific example spam classification model")
 
 	elif choice == "Results":
 		st.subheader("Results")
