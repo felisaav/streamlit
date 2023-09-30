@@ -237,13 +237,15 @@ def main():
 		st.write("now, let's assume we can see if the email 'Hello friend' is a spam or not")
 		st.write("So, we have to compare if:")
 		st.latex(r'''
-  			P(spam/hello friend)<P(not spam/hello friend) or P(spam/hello friend)>P(not spam/hello friend)
+  			P(spam/hello friend) ? P(not spam/hello friend)
      			''')
-		
+		st.write("let's analyze the first probability")
 		st.latex(r'''
-			P(spam/hello friend)=\frac{P(hello friend)*P(spam)}{P(hello friend)}
+			P(spam/hello friend)=\frac{P(hello friend/spam)*P(spam)}{P(hello friend)}
 			''')
-		
+		st.latex(r'''
+			P(hello friend/spam)*P(spam)=P(hello/spam)*P(friend/spam)*P(spam)
+			''')
 
 	elif choice == "Results":
 		st.subheader("Results")
