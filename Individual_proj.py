@@ -214,26 +214,32 @@ def main():
 		st.latex(r'''
   			P(H/E)=\frac{P(E/H)*P(H)}{P(E)}
      			''')
-		st.write('<p style="font-size:24px; color:blue;">What makes Naive Bayes a ***Naive*** algorithm?</p>',unsafe_allow_html=True)
+		st.write('<p style="font-size:24px; color:blue;">What makes Naive Bayes a Naive algorithm?</p>',unsafe_allow_html=True)
 		st.write('''Naive Bayes classifier assumes that the features we use to predict the target are independent and do not affect each other. \
   			While in real-life data, features depend on each other in determining the target, but this is ignored by the Naive Bayes classifier.\
      			Though the independence assumption is never correct in real-world data, but often works well in practice. so that it is called ***Naive***.
   			''')
 		st.write('<p style="font-size:24px; color:blue;">Specific spam/not spam email classification model</p>',unsafe_allow_html=True)
-		st.write('''As Taylor Swift's says the long story short, let's use the following example to understand the model.\
-  			Let's assume the following table:''')
+		st.write('''As Taylor Swift's says...the long story short, let's use the following example to understand the deployment\
+  			of this model in this specific case.
+  			Let's assume that after some data transformation we can count the frequency of words for spam/not spam emails, like the following table:''')
 		col1,col2 = st.columns(2)
 		with col1:
 			st.image('media/table1.png')
 		with col2:
-			st.write("let's explore some probabilities:")
+			st.write("With this information, we can calculate some probabilities, for example:")
 			st.latex(r'''
    				P(free/not spam)=\frac{20}{480}
        				''')
 			st.latex(r'''
    				P(discount/spam)=\frac{120}{660}
        				''')
-		st.write("now, let's assume the email 'Hello friend', and see if it is a spam or not")
+		st.write("now, let's assume we can see if the email 'Hello friend' is a spam or not")
+		st.write("So, we have to compare if:")
+		st.latex(r'''
+  			P(spam/hello friend)<P(not spam/hello friend) or P(spam/hello friend)>P(not spam/hello friend)
+     			''')
+		
 		st.latex(r'''
 			P(spam/hello friend)=\frac{P(hello friend)*P(spam)}{P(hello friend)}
 			''')
