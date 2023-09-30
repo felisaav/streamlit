@@ -193,7 +193,7 @@ def main():
 		with col4:
 			st.write("***10 most freq words in not spam emails***")
 			st.pyplot(fig5) #seaborn chart most freq words
-		st.write("the main conclusion around the most popular words, is that spam emails have more dirty content, with **-** or letters")
+		st.write("The first conclusion around the most popular words, is that spam emails have more noisy content, with **-** or letters without specific meaning")
 	
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
@@ -219,6 +219,8 @@ def main():
   			While in real-life data, features depend on each other in determining the target, but this is ignored by the Naive Bayes classifier.\
      			Though the independence assumption is never correct in real-world data, but often works well in practice. so that it is called ***Naive***.
   			''')
+		st.write('''This is a simple and really important concept, let's see why''')
+		st.write("In this specific example spam classification model
 
 	elif choice == "Results":
 		st.subheader("Results")
