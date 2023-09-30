@@ -185,7 +185,6 @@ def main():
 		with col2:
 			st.write("spam emails have a **right Skewed** shape (vs not spam), showing that in general are **shorter emails**")
 			st.pyplot(fig2) #matplotlib chart len distribution
-			st.write("spam emails length distribution show that are shorter vs not spam emails")
 		
 		col3,col4 = st.columns(2)
 		with col3:
@@ -194,6 +193,7 @@ def main():
 		with col4:
 			st.write("***10 most freq words in not spam emails***")
 			st.pyplot(fig5) #seaborn chart most freq words
+		st.write("the main conclusion around the most popular words, is that spam emails have more dirty content, with **-** or letters")
 	
 	elif choice == "Predictive Model":
 		st.subheader("Predictive Model")
