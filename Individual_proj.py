@@ -222,8 +222,21 @@ def main():
 		st.write('<p style="font-size:24px; color:blue;">Specific spam/not spam email classification model</p>',unsafe_allow_html=True)
 		st.write("As Taylor Swift's says the long story short, let's use the following example to understand the model.\
   			Let's assume the following table:")
-		st.image('media/table1.png')
-		
+		col1,col2 = st.columns(2)
+		with col1:
+			st.image('media/table1.png')
+		with col2:
+			st.write("let's explore some probabilities:")
+			st.latex(r'''
+   				P(free/not spam)=\frac{20}{480}
+       				''')
+			st.latex(r'''
+   				P(discount/spam)=\frac{120}{660}
+       				''')
+		st.write("now, let's assume the email "Hello friend", and see if it is a spam or not")
+		st.latex(r'''
+			P(spam/hello friend)=\frac{P(hello friend)*P(spam)}{P(hello friend)}
+			''')
 		
 
 	elif choice == "Results":
