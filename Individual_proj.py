@@ -222,7 +222,7 @@ def main():
 		st.write('<p style="font-size:24px; color:blue;">Specific spam/not spam email classification model</p>',unsafe_allow_html=True)
 		st.write("As Taylor Swift's says the long story short, let's use the following example to understand the model.\
   			Let's assume the following table:")
-		image = Image.open('media\table1.png')
+		image = Image.open('media/table1.png')
 		st.image(image, caption='ex_table')
 		
 		
