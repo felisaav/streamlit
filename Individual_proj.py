@@ -205,7 +205,7 @@ def main():
       			based on their content, sender, subject, and other features.''')
 		st.write('''Email spam classification can help users and organizations 
 	 		to protect themselves from the threats of spam and improve their email experience.''')
-		st.subheader("Naive Bayes")
+		st.write('<p style="font-size:24px; color:blue;">Naive Bayes</p>',unsafe_allow_html=True)
 		st.write('''Naive Bayes is a classification technique that is based on Bayes’ Theorem with an assumption that all the features \
   			that predicts the target value are independent of each other. It calculates the probability of each class and then pick \
      			the one with the highest probability. It has been successfully used for many purposes, but it works particularly well with \
@@ -214,13 +214,14 @@ def main():
 		st.latex(r'''
   			P(H/E)=\frac{P(E/H)*P(H)}{P(E)}
      			''')
-		st.subheader("What makes Naive Bayes a ***Naive*** algorithm?")
+		st.write('<p style="font-size:24px; color:blue;">What makes Naive Bayes a ***Naive*** algorithm?</p>',unsafe_allow_html=True)
 		st.write('''Naive Bayes classifier assumes that the features we use to predict the target are independent and do not affect each other. \
   			While in real-life data, features depend on each other in determining the target, but this is ignored by the Naive Bayes classifier.\
      			Though the independence assumption is never correct in real-world data, but often works well in practice. so that it is called ***Naive***.
   			''')
-		st.write('''This is a simple and really important concept, let's see why''')
-		st.write("In this specific example spam classification model")
+		st.write('<p style="font-size:24px; color:blue;">Specific spam/not spam email classification model</p>',unsafe_allow_html=True)
+		st.write("As Taylor Swift's says the long story short in this case is the following:")
+		
 
 	elif choice == "Results":
 		st.subheader("Results")
