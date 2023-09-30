@@ -233,7 +233,7 @@ def main():
 			st.latex(r'''
    				P(discount/spam)=\frac{120}{660}
        				''')
-		st.write("now, let's assume the email "Hello friend", and see if it is a spam or not")
+		st.write("now, let's assume the email 'Hello friend', and see if it is a spam or not")
 		st.latex(r'''
 			P(spam/hello friend)=\frac{P(hello friend)*P(spam)}{P(hello friend)}
 			''')
