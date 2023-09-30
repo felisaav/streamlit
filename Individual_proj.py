@@ -220,8 +220,8 @@ def main():
      			Though the independence assumption is never correct in real-world data, but often works well in practice. so that it is called ***Naive***.
   			''')
 		st.write('<p style="font-size:24px; color:blue;">Specific spam/not spam email classification model</p>',unsafe_allow_html=True)
-		st.write("As Taylor Swift's says the long story short, let's use the following example to understand the model.\
-  			Let's assume the following table:")
+		st.write('''As Taylor Swift's says the long story short, let's use the following example to understand the model.\
+  			Let's assume the following table:''')
 		col1,col2 = st.columns(2)
 		with col1:
 			st.image('media/table1.png')
