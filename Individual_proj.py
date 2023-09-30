@@ -180,10 +180,10 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
 		with col1:
-			st.write("total dataset (5,730 emails) contains <p style='color:blue'>**23.9% of spam**</p> emails", unsafe_allow_html=True)
+			st.write("total dataset (5,730 emails) contains **23.9% of spam** emails", unsafe_allow_html=True)
 			st.pyplot(fig1) #matplotlib piechart
 		with col2:
-			st.write("***Distribution spam/not spam emails lenght***")
+			st.write("spam emails have a **right Skewed** shape (vs not spam), showing that in general are **shorter emails**")
 			st.pyplot(fig2) #matplotlib chart len distribution
 			st.write("spam emails length distribution show that are shorter vs not spam emails")
 		
