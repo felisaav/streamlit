@@ -212,7 +212,7 @@ def main():
 			natural language processing (NLP) problems.''')
 		st.write('''Bayes’ Theorem describes the probability of an event, based on a prior knowledge of conditions that might be related to that event.''')
 		st.latex(r'''
-  			P(H/E)=\frac{P(E/H)*P(H)}{P(E)}
+  			P(H/E)=\frac{P(E/H)\times P(H)}{P(E)}
      			''')
 		st.write('<p style="font-size:24px; color:blue;">What makes Naive Bayes a Naive algorithm?</p>',unsafe_allow_html=True)
 		st.write('''Naive Bayes classifier assumes that the features we use to predict the target are independent and do not affect each other. \
@@ -241,10 +241,10 @@ def main():
      			''')
 		st.write("let's analyze the first probability")
 		st.latex(r'''
-			P(spam/hello friend)=\frac{P(hello friend/spam)*P(spam)}{P(hello friend)}
+			P(spam/hello friend)=\frac{P(hello friend/spam)\times P(spam)}{P(hello friend)}
 			''')
 		st.latex(r'''
-			P(hello friend/spam)*P(spam)=P(hello/spam)*P(friend/spam)*P(spam)
+			P(hello friend/spam)\times P(spam)=P(hello/spam)\times P(friend/spam)\times P(spam), \text{ independent events}
 			''')
 
 	elif choice == "Results":
