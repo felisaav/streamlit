@@ -180,7 +180,7 @@ def main():
 		st.markdown("""---""")
 		col1,col2 = st.columns(2)
 		with col1:
-			st.write("***Distribution of spam/not spam emails***")
+			st.write("***total dataset (5,730 emails) contains 23.9% of spam emails***")
 			st.pyplot(fig1) #matplotlib piechart
 		with col2:
 			st.write("***Distribution spam/not spam emails lenght***")
