@@ -238,15 +238,15 @@ def main():
 		st.write("now, we will analyze if the email 'Hello friend' is a spam or not, based on naive bayes algorithm")
 		st.write("The idea is to compare what probability is bigger")
 		st.latex(r'''
-  			P(textcolor{red}{spam}/hello friend)\ or\ P(textcolor{green}{not spam}/hello friend)
+  			P(\textcolor{red}{spam}/hello friend)\ or\ P(\textcolor{green}{not spam}/hello friend)
      			''')
 		st.write("Let's analyze the first probability")
 		st.latex(r'''
-			(1) P(textcolor{red}{spam}/hello friend)=\frac{P(hello friend/textcolor{red}{spam})\times P(textcolor{red}{spam})}{P(hello friend)}
+			(1) P(\textcolor{red}{spam}/hello friend)=\frac{P(hello friend/\textcolor{red}{spam})\times P(\textcolor{red}{spam})}{P(hello friend)}
 			''')
 		st.write("Since we are using Naive Bayes formula, we will ignore denominator, because both probabilities have the same. So,")
 		st.latex(r'''
-			(2) P(hello friend/textcolor{red}{spam})=P(hello/textcolor{red}{spam})\times P(friend/textcolor{red}{spam}), \text{ independent events}
+			(2) P(hello friend/\textcolor{red}{spam})=P(hello/\textcolor{red}{spam})\times P(friend/\textcolor{red}{spam}), \text{ independent events}
 			''')
 		st.latex(r'''
 			so, (1) P(hello/spam)\times P(friend/spam)=\frac{75}{660}\times \frac{5}{660}
