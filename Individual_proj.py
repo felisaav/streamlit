@@ -230,10 +230,10 @@ def main():
 		with col2:
 			st.write("With this information, we can calculate some probabilities, for example:")
 			st.latex(r'''
-   				P(free/not spam)=\frac{20}{480}
+   				P(free/\textcolor{red}{not spam})=\frac{20}{480}
        				''')
 			st.latex(r'''
-   				P(discount/spam)=\frac{120}{660}
+   				P(discount/\textcolor{green}{spam})=\frac{120}{660}
        				''')
 		st.write("now, we will analyze if the email 'Hello friend' is a spam or not, based on naive bayes algorithm")
 		st.write("The idea is to compare what probability is bigger")
