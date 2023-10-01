@@ -250,14 +250,16 @@ def main():
 			P(hello friend/\textcolor{red}{spam})=P(hello/\textcolor{red}{spam})\times P(friend/\textcolor{red}{spam}), \text{ independent events}
 			''')
 		st.latex(r'''
-			so, P(hello friend/\textcolor{red}{spam})\times P(\textcolor{red}{spam}) = P(hello/\textcolor{red}{spam})\times P(friend/\textcolor{red}{spam})\times P(\textcolor{red}{spam})
-   				=\frac{75}{660}\times \frac{5}{660}\times \frac{10}{25}
+			so, P(hello friend/\textcolor{red}{spam})\times P(\textcolor{red}{spam}) = 
+   			P(hello/\textcolor{red}{spam})\times P(friend/\textcolor{red}{spam})\times P(\textcolor{red}{spam})
 			''')
 		st.latex(r'''
-			so, =\frac{75}{660}\times \frac{5}{660}\times \frac{10}{25}
+			finally, =\frac{75}{660}\times \frac{5}{660}\times \frac{10}{25} = \textcolor{red}{0.000344}
 			''')
-		st.write("an finally...")
-		st.latex(r'''''')
+		st.write("using the same procedure with not spam email we get the following result")
+		st.latex(r'''
+  			P(\textcolor{green}{not spam}/hello friend) =\frac{100}{480}\times \frac{200}{480}\times \frac{15}{25} = \textcolor{green}{0.052083}
+  			''')
 
 	elif choice == "Results":
 		st.subheader("Results")
