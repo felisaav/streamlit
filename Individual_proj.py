@@ -260,7 +260,7 @@ def main():
 		st.latex(r'''
   			P(\textcolor{green}{not spam}/hello friend) =\frac{100}{480}\times \frac{200}{480}\times \frac{15}{25} = \textcolor{green}{0.052083}
   			''')
-
+		st.write("In this example the answer is that "hello friend" is a not spam email")
 	elif choice == "Results":
 		st.subheader("Results")
 		st.markdown("""---""")
