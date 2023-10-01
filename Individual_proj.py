@@ -252,8 +252,8 @@ def main():
 			(3) P(hello/spam)\times P(friend/spam)=\frac{75}{660}\times \frac{5}{660}
 			''')
 		st.write("an finally...")
-		st.latex(r'''
-  			(4) 
+		st.latex(r'''''')
+
 	elif choice == "Results":
 		st.subheader("Results")
 		st.markdown("""---""")
