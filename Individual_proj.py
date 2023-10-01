@@ -166,7 +166,7 @@ def main():
 				this kind of problems and the main results. \
     				Below you can see an example of the dataset:''')
 
-		st.write('<p style="font-size:24px; color:blue;">Original Dataset</p>',unsafe_allow_html=True)
+		st.write('<p style="font-size:24px; color:blue;">Original Dataset Example</p>',unsafe_allow_html=True)
 		col1,col2 = st.columns(2)
 		with col1:
 			st.write("spam emails examples")
