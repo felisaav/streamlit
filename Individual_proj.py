@@ -240,7 +240,11 @@ def main():
 		st.latex(r'''
   			P(\textcolor{red}{spam}/hello friend)\ or\ P(\textcolor{green}{not spam}/hello friend)
      			''')
-		st.write("Let's analyze the first probability")
+		#st.write("Using naive bayes formula")
+		st.latex(r'''
+			\frac{P(hello friend/\textcolor{red}{spam})\times P(\textcolor{red}{spam})}{P(hello friend)} or\ \frac{P(hello friend/\textcolor{green}{not spam})\times P(\textcolor{green}{not spam})}{P(hello friend)}
+			''')
+		
 		st.latex(r'''
 			(1) P(\textcolor{red}{spam}/hello friend)=\frac{P(hello friend/\textcolor{red}{spam})\times P(\textcolor{red}{spam})}{P(hello friend)}
 			''')
