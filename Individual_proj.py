@@ -222,7 +222,8 @@ def main():
 		st.write('<p style="font-size:24px; color:blue;">Specific spam/not spam email classification model</p>',unsafe_allow_html=True)
 		st.write('''As Taylor Swift's says...the long story short, let's use the following example to understand the deployment\
   			of this model in this specific case.
-  			Let's assume that after some data transformation we can count the frequency of words for spam/not spam emails, like the following table:''')
+  			Let's assume that we have 15 not spam emails and 10 spam emails, also we will assume that after some data transformation \
+     			we can count the frequency of words for spam/not spam emails, like the following table:''')
 		col1,col2 = st.columns(2)
 		with col1:
 			st.image('media/table1.png')
@@ -234,19 +235,25 @@ def main():
 			st.latex(r'''
    				P(discount/spam)=\frac{120}{660}
        				''')
-		st.write("now, let's assume we can see if the email 'Hello friend' is a spam or not")
-		st.write("So, we have to compare if:")
+		st.write("now, we will analyze if the email 'Hello friend' is a spam or not, based on naive bayes algorithm")
+		st.write("The idea is to compare what probability is bigger")
 		st.latex(r'''
-  			P(spam/hello friend) ? P(not spam/hello friend)
+  			P(spam/hello friend)  or  P(not spam/hello friend)
      			''')
-		st.write("let's analyze the first probability")
+		st.write("Let's analyze the first probability")
 		st.latex(r'''
-			P(spam/hello friend)=\frac{P(hello friend/spam)\times P(spam)}{P(hello friend)}
+			(1) P(spam/hello friend)=\frac{P(hello friend/spam)\times P(spam)}{P(hello friend)}
+			''')
+		st.write("Since we are using Naive Bayes formula, we will ignore denominator, because both probabilities have the same. So,")
+		st.latex(r'''
+			(2) P(hello friend/spam)=P(hello/spam)\times P(friend/spam), \text{ independent events}
 			''')
 		st.latex(r'''
-			P(hello friend/spam)\times P(spam)=P(hello/spam)\times P(friend/spam)\times P(spam), \text{ independent events}
+			(3) P(hello/spam)\times P(friend/spam)=\frac{75}{660}\times \frac{5}{660}
 			''')
-
+		st.write("an finally...")
+		st.latex(r'''
+  			(4) 
 	elif choice == "Results":
 		st.subheader("Results")
 		st.markdown("""---""")
