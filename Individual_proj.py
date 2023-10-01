@@ -253,6 +253,9 @@ def main():
 			so, P(hello friend/\textcolor{red}{spam})\times P(\textcolor{red}{spam}) = P(hello/\textcolor{red}{spam})\times P(friend/\textcolor{red}{spam})\times P(\textcolor{red}{spam})
    				=\frac{75}{660}\times \frac{5}{660}\times \frac{10}{25}
 			''')
+		st.latex(r'''
+			so, =\frac{75}{660}\times \frac{5}{660}\times \frac{10}{25}
+			''')
 		st.write("an finally...")
 		st.latex(r'''''')
 
