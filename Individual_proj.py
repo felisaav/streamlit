@@ -235,7 +235,7 @@ def main():
 			st.latex(r'''
    				P(discount/\textcolor{red}{spam})=\frac{120}{660}
        				''')
-		st.write("now, we will analyze if the email 'Hello friend' is a spam or not, based on naive bayes algorithm")
+		st.write("Now, we will analyze if the email **hello friend** is a spam or not, based on naive bayes algorithm")
 		st.write("The idea is to compare what probability is bigger")
 		st.latex(r'''
   			P(\textcolor{red}{spam}/hello friend)\ or\ P(\textcolor{green}{not spam}/hello friend)
@@ -256,7 +256,7 @@ def main():
 		st.latex(r'''
 			finally, =\frac{75}{660}\times \frac{5}{660}\times \frac{10}{25} = \textcolor{red}{0.000344}
 			''')
-		st.write("using the same procedure with not spam email we get the following result")
+		st.write("Using the same procedure with not spam email we get the following result")
 		st.latex(r'''
   			P(\textcolor{green}{not spam}/hello friend) =\frac{100}{480}\times \frac{200}{480}\times \frac{15}{25} = \textcolor{green}{0.052083}
   			''')
