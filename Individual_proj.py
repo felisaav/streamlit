@@ -238,7 +238,7 @@ def main():
 		st.write("now, we will analyze if the email 'Hello friend' is a spam or not, based on naive bayes algorithm")
 		st.write("The idea is to compare what probability is bigger")
 		st.latex(r'''
-  			P(spam/hello friend)  or  P(not spam/hello friend)
+  			P(spam/hello friend)\ or\ P(not spam/hello friend)
      			''')
 		st.write("Let's analyze the first probability")
 		st.latex(r'''
