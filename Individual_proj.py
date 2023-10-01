@@ -276,7 +276,7 @@ def main():
 			st.write(f"Specificity: {specificity:.2f}%")
 			st.write(f"Recall: {recall:.2f}%")
 		st.markdown("""---""")
-		st.subheader("Test your email content and see if it is a spam or not")
+		st.write('<p style="font-size:24px; color:blue;">Test your email content and see if it is a spam or not</p>',unsafe_allow_html=True)
 		with st.form(key='test_email'):
 			msg =st.text_area("write your email here")
 			submit_code = st.form_submit_button("Execute")
