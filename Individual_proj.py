@@ -275,7 +275,6 @@ def main():
 			st.write(f"Precision: {precision:.2f}%")
 			st.write(f"Specificity: {specificity:.2f}%")
 			st.write(f"Recall: {recall:.2f}%")
-		st.markdown("""---""")
 		st.write('<p style="font-size:24px; color:blue;">Test your email content and see if it is a spam or not</p>',unsafe_allow_html=True)
 		with st.form(key='test_email'):
 			msg =st.text_area("write your email here")
